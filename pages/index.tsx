@@ -1,6 +1,7 @@
 import React from "react";
 
 import BackgroundImage from "../assets/svg/background.svg";
+import SEO from "../components/SEO";
 import Card from "../components/data/Card";
 import Navigation from "../components/layout/Navigation";
 import SectionHeader from "../components/layout/SectionHeader";
@@ -8,6 +9,19 @@ import SectionHeader from "../components/layout/SectionHeader";
 export default function Index() {
   return (
     <>
+      <SEO
+        title="Home"
+        description="Hey, I'm Cubxity. I'm a Full-stack Developer and System Administrator with 5+ years of experience. This is my portfolio, check it out!"
+        keywords={[
+          "cubxity",
+          "full-stack",
+          "developer",
+          "minecraft",
+          "sysadmin",
+          "portfolio",
+          "resume",
+        ]}
+      />
       <div className="h-screen min-h-[40rem] bg-gradient-to-bl from-gray-900 to-black flex flex-col min-h-fit">
         <Navigation />
         <div className="container m-auto px-4">
