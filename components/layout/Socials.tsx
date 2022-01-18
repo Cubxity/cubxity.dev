@@ -1,6 +1,6 @@
+import DiscordIcon from "../../assets/svg/logo/fa-discord.svg";
 import GitHubIcon from "../../assets/svg/logo/fa-github.svg";
 import TwitterIcon from "../../assets/svg/logo/fa-twitter.svg";
-import DiscordIcon from "../../assets/svg/logo/fa-discord.svg";
 import IconButton from "../IconButton";
 
 export default function Socials() {
