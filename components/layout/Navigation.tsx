@@ -14,11 +14,6 @@ export default function Navigation() {
         </li>
       </ul>
       <div className="grow" />
-      {/*<NextLink href="#" passHref>
-        <a className="font-xl font-semibold text-white rounded-full border-2 border-white px-8 py-2">
-          Get in touch
-        </a>
-      </NextLink>*/}
     </nav>
   );
 }

@@ -2,11 +2,12 @@ import React from "react";
 
 import BackgroundImage from "../assets/svg/background.svg";
 import SEO from "../components/SEO";
+import Projects from "../components/cms/Projects";
 import Card from "../components/data/Card";
 import Navigation from "../components/layout/Navigation";
+import ScrollArrow from "../components/layout/ScrollArrow";
 import SectionHeader from "../components/layout/SectionHeader";
 import Socials from "../components/layout/Socials";
-import ScrollArrow from "../components/layout/ScrollArrow";
 
 export default function Index() {
   return (
@@ -24,7 +25,7 @@ export default function Index() {
           "resume",
         ]}
       />
-      <div className="h-screen min-h-[40rem] bg-gradient-to-bl from-gray-900 to-black flex flex-col min-h-fit relative">
+      <div className="h-screen min-h-[40rem] bg-gradient-to-bl from-gray-900 to-black flex flex-col relative">
         <Navigation />
         <header className="container m-auto px-4">
           <div className="lg:w-1/2">
@@ -45,7 +46,16 @@ export default function Index() {
         <ScrollArrow />
       </div>
       <main>
-        <section id="process" className="py-8 md:py-20 bg-background">
+        <section id="clients" className="py-8 md:py-12 bg-background">
+          <div className="container px-4 m-auto">
+            <SectionHeader
+              title="Featured Projects"
+              subtitle="A mix of personal and commissioned projects."
+            />
+            <Projects />
+          </div>
+        </section>
+        <section id="process" className="py-8 md:py-12 bg-background">
           <div className="container px-4 m-auto">
             <SectionHeader
               title="Fulfilling The Process"
