@@ -6,6 +6,7 @@ import Card from "../components/data/Card";
 import Navigation from "../components/layout/Navigation";
 import SectionHeader from "../components/layout/SectionHeader";
 import Socials from "../components/layout/Socials";
+import ScrollArrow from "../components/layout/ScrollArrow";
 
 export default function Index() {
   return (
@@ -23,9 +24,9 @@ export default function Index() {
           "resume",
         ]}
       />
-      <div className="h-screen min-h-[40rem] bg-gradient-to-bl from-gray-900 to-black flex flex-col min-h-fit">
+      <div className="h-screen min-h-[40rem] bg-gradient-to-bl from-gray-900 to-black flex flex-col min-h-fit relative">
         <Navigation />
-        <div className="container m-auto px-4">
+        <header className="container m-auto px-4">
           <div className="lg:w-1/2">
             <span className="text-2xl text-gray-300 font-medium">
               Hey I&apos;m
@@ -40,34 +41,37 @@ export default function Index() {
             <Socials />
           </div>
           <BackgroundImage className="invisible lg:visible absolute right-0 top-0 bottom-0 h-full" />
-        </div>
+        </header>
+        <ScrollArrow />
       </div>
-      <section id="process" className="py-8 md:py-20 bg-background">
-        <div className="container px-4 m-auto">
-          <SectionHeader
-            title="Fulfilling The Process"
-            subtitle="Software development, from start to finish."
-          />
-          <div className="grid md:grid-cols-2 2xl:grid-cols-4 gap-6 pt-8 md:pt-12">
-            <Card
-              title="Design & Prototype"
-              subtitle="From UX design to system architecture design, ensuring a silky smooth user experience."
+      <main>
+        <section id="process" className="py-8 md:py-20 bg-background">
+          <div className="container px-4 m-auto">
+            <SectionHeader
+              title="Fulfilling The Process"
+              subtitle="Software development, from start to finish."
             />
-            <Card
-              title="Full-stack development"
-              subtitle="From RESTful APIs to a friendly user interface, with scalability in mind."
-            />
-            <Card
-              title="Deployment"
-              subtitle="Managing deployments using Docker and Kubernetes on a Linux server."
-            />
-            <Card
-              title="System administration"
-              subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius interdum eros."
-            />
+            <div className="grid md:grid-cols-2 2xl:grid-cols-4 gap-6 pt-8 md:pt-12">
+              <Card
+                title="Design & Prototype"
+                subtitle="From UX design to system architecture design, ensuring a silky smooth user experience."
+              />
+              <Card
+                title="Full-stack development"
+                subtitle="From RESTful APIs to a friendly user interface, with scalability in mind."
+              />
+              <Card
+                title="Deployment"
+                subtitle="Managing deployments using Docker and Kubernetes on a Linux server."
+              />
+              <Card
+                title="System administration"
+                subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius interdum eros."
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </>
   );
 }
