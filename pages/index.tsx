@@ -5,6 +5,7 @@ import SEO from "../components/SEO";
 import Card from "../components/data/Card";
 import Navigation from "../components/layout/Navigation";
 import SectionHeader from "../components/layout/SectionHeader";
+import Socials from "../components/layout/Socials";
 
 export default function Index() {
   return (
@@ -36,6 +37,7 @@ export default function Index() {
               Full-stack developer with 5+ years of experience. System
               administrator and DevOps engineer.
             </span>
+            <Socials />
           </div>
           <BackgroundImage className="invisible lg:visible absolute right-0 top-0 bottom-0 h-full" />
         </div>
