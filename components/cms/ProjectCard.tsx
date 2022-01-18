@@ -39,7 +39,7 @@ const ProjectTag = ({ tag }: ProjectTagProps) => {
 
 export default function ProjectCard() {
   return (
-    <div className="w-80 sm:w-auto bg-neutral-800 overflow-clip rounded-lg hover:scale-105 transition-transform snap-center">
+    <div className="w-80 sm:w-auto bg-neutral-800 overflow-clip rounded-lg sm:hover:scale-105 transition-transform snap-center">
       <div className="aspect-video bg-black" />
       <div className="p-4">
         <ul className="pb-4 flex gap-2">
