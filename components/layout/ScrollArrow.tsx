@@ -9,7 +9,7 @@ export default function ScrollArrow() {
   return (
     <button
       type="button"
-      className="absolute left-0 right-0 bottom-0 mx-auto mb-4 animate-bounce"
+      className="absolute left-1/2 right-1/2 bottom-16 sm:bottom-4 animate-bounce"
       onClick={handleScroll}
     >
       <ChevronIcon className="text-gray-200 w-6 h-6" />
