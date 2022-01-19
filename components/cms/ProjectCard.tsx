@@ -51,11 +51,11 @@ export default function ProjectCard() {
           </li>
         </ul>
         <h3 className="text-white font-bold pb-2">A Project</h3>
-        <span className="text-gray-300">
+        <span className="text-neutral-300">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
           vulputate ante magna, vitae consequat odio vehicula vel.
         </span>
-        <span className="text-neutral-500 block mt-4">January 2022</span>
+        <span className="text-neutral-400 block mt-4">January 2022</span>
       </div>
     </div>
   );

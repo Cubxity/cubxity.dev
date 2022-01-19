@@ -11,6 +11,7 @@ export default function ScrollArrow() {
       type="button"
       className="absolute left-1/2 right-1/2 bottom-16 sm:bottom-4 animate-bounce"
       onClick={handleScroll}
+      aria-label="scroll down"
     >
       <ChevronIcon className="text-gray-200 w-6 h-6" />
     </button>
