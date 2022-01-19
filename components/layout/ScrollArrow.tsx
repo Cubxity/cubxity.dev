@@ -9,7 +9,7 @@ export default function ScrollArrow() {
   return (
     <button
       type="button"
-      className="absolute left-1/2 right-1/2 bottom-16 sm:bottom-4 animate-bounce"
+      className="mb-20 sm:mb-6 mx-auto animate-bounce"
       onClick={handleScroll}
       aria-label="scroll down"
     >
