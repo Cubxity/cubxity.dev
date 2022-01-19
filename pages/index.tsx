@@ -25,7 +25,7 @@ export default function Index() {
           "resume",
         ]}
       />
-      <div className="h-screen min-h-[40rem] bg-gradient-to-bl from-gray-900 to-black flex flex-col relative">
+      <div className="h-screen min-h-[40rem] max-h-[80rem] bg-gradient-to-bl from-gray-900 to-black flex flex-col relative">
         <Navigation />
         <header className="container m-auto px-4">
           <div className="lg:w-1/2">
@@ -46,7 +46,7 @@ export default function Index() {
         <ScrollArrow />
       </div>
       <main>
-        <section id="clients" className="py-8 md:py-12 bg-background">
+        <section id="clients" className="py-8 md:py-12">
           <div className="container px-4 m-auto">
             <SectionHeader
               title="Featured Projects"
@@ -55,7 +55,7 @@ export default function Index() {
             <Projects />
           </div>
         </section>
-        <section id="process" className="py-8 md:py-12 bg-background">
+        <section id="process" className="py-8 md:py-12">
           <div className="container px-4 m-auto">
             <SectionHeader
               title="Fulfilling The Process"
