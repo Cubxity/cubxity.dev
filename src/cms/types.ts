@@ -7,9 +7,11 @@ export type ProjectTag =
   | "sysadmin";
 
 export interface Project {
-  readonly tags: ProjectTag[];
-  readonly name: string;
+  readonly slug: string;
+  readonly title: string;
   readonly description: string;
-
-
+  readonly tags: ProjectTag[];
+  readonly date: string;
+  readonly featured: boolean;
+  readonly thumbnail?: string;
 }

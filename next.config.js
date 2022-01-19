@@ -20,4 +20,7 @@ module.exports = {
 
     return config;
   },
+  images: {
+    domains: ["github.com"],
+  },
 };

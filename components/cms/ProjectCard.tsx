@@ -1,61 +1,44 @@
-import clsx from "clsx";
-import { useMemo } from "react";
+import Image from "next/image";
 
-import { ProjectTag } from "../../src/cms/types";
+import { Project, ProjectTag } from "../../src/cms/types";
 
 interface ProjectTagProps {
   tag: ProjectTag;
 }
 
 const ProjectTag = ({ tag }: ProjectTagProps) => {
-  const colorStyle = useMemo(() => {
-    switch (tag) {
-      case "full-stack":
-        return "bg-teal-400/20";
-      case "web":
-        return "bg-indigo-400/20";
-      case "backend":
-        return "bg-blue-400/20";
-      case "minecraft":
-        return "bg-green-400/20";
-      case "devops":
-        return "bg-yellow-400/20";
-      case "sysadmin":
-        return "bg-red-400/20";
-    }
-  }, [tag]);
-
   return (
-    <div
-      className={clsx(
-        "px-4 py-1 text-white text-xs font-bold rounded-full w-min uppercase",
-        colorStyle
-      )}
-    >
-      {tag}
-    </div>
+    <span className="text-xs text-neutral-400 font-bold uppercase">#{tag}</span>
   );
 };
 
-export default function ProjectCard() {
+export interface ProjectCardProps {
+  project: Project;
+}
+
+export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="w-80 sm:w-auto bg-neutral-800 overflow-clip rounded-lg sm:hover:scale-105 transition-transform snap-center">
-      <div className="aspect-video bg-black" />
+    <div className="w-80 sm:w-auto bg-neutral-800 overflow-clip rounded-lg sm:hover:scale-[102%] transition-transform snap-center">
+      <div className="aspect-video bg-black relative">
+        {project.thumbnail && (
+          <Image
+            src={project.thumbnail}
+            alt=""
+            layout="fill"
+            className="object-cover"
+          />
+        )}
+      </div>
       <div className="p-4">
-        <ul className="pb-4 flex gap-2">
-          <li>
-            <ProjectTag tag="web" />
-          </li>
-          <li>
-            <ProjectTag tag="devops" />
-          </li>
+        <ul className="pb-3 flex gap-2">
+          {project.tags.map((tag) => (
+            <li key={tag}>
+              <ProjectTag tag={tag} />
+            </li>
+          ))}
         </ul>
-        <h3 className="text-white font-bold pb-2">A Project</h3>
-        <span className="text-neutral-300">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-          vulputate ante magna, vitae consequat odio vehicula vel.
-        </span>
-        <span className="text-neutral-400 block mt-4">January 2022</span>
+        <h3 className="text-white font-bold pb-2">{project.title}</h3>
+        <span className="text-neutral-300">{project.description}</span>
       </div>
     </div>
   );

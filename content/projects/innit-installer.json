@@ -1,0 +1,12 @@
+{
+  "date": "2022-01-19T18:56:11.842Z",
+  "thumbnail": "/content/media/innit-installer.png",
+  "featured": true,
+  "title": "Innit.gg Installer",
+  "description": "Minecraft mod installer built with cutting edge web technologies",
+  "tags": [
+    "web",
+    "minecraft"
+  ],
+  "slug": "innit-installer"
+}

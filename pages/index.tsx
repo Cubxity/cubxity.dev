@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import React from "react";
 
 import BackgroundImage from "../assets/svg/background.svg";
@@ -8,8 +9,14 @@ import Navigation from "../components/layout/Navigation";
 import ScrollArrow from "../components/layout/ScrollArrow";
 import SectionHeader from "../components/layout/SectionHeader";
 import Socials from "../components/layout/Socials";
+import { fetchProjects } from "../src/cms/content.server";
+import { Project } from "../src/cms/types";
 
-export default function Index() {
+export interface IndexProps {
+  projects: Project[];
+}
+
+export default function Index({ projects }: IndexProps) {
   return (
     <>
       <SEO
@@ -52,7 +59,7 @@ export default function Index() {
               title="Featured Projects"
               subtitle="A mix of personal and commissioned projects."
             />
-            <Projects />
+            <Projects projects={projects} />
           </div>
         </section>
         <section id="process" className="py-8 md:py-12">
@@ -85,3 +92,13 @@ export default function Index() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const projects = await fetchProjects().then((projects) =>
+    projects.filter((project) => project.featured)
+  );
+
+  return {
+    props: { projects },
+  };
+};
