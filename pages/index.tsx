@@ -30,7 +30,7 @@ export default function Index() {
         <header className="container m-auto px-4">
           <div className="lg:w-1/2">
             <span className="text-2xl text-gray-300 font-medium">
-              Hey I&apos;m
+              Hey, I&apos;m
             </span>
             <h1 className="text-7xl md:text-8xl text-white font-medium py-8">
               Cubxity
