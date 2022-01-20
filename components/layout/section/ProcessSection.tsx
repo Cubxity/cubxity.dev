@@ -38,7 +38,7 @@ interface ProcessItemProps {
 
 const ProcessItem = ({ icon: Icon, label }: ProcessItemProps) => {
   return (
-    <div className="bg-neutral-800 rounded-lg p-6 sm:hover:scale-[102%]">
+    <div className="bg-neutral-800 rounded-lg p-6 sm:hover:scale-[102%] transition-transform">
       <Icon className="text-white w-6 h-6 inline mr-6" />
       <span className="text-white font-bold">{label}</span>
     </div>
