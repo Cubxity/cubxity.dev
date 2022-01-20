@@ -18,7 +18,7 @@ export interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="w-80 sm:w-auto bg-neutral-800 overflow-clip rounded-lg sm:hover:scale-[102%] transition-transform snap-center">
+    <div className="w-80 sm:w-auto bg-neutral-800 overflow-clip rounded-lg sm:hover:scale-[102%] transition-transform snap-center h-full">
       <div className="aspect-video bg-black relative">
         {project.thumbnail && (
           <Image
