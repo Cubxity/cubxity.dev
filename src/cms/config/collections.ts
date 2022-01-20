@@ -48,6 +48,26 @@ export const projects: CmsCollection = {
       required: true,
     },
     {
+      label: "Links",
+      name: "links",
+      widget: "list",
+      required: true,
+      fields: [
+        {
+          label: "Label",
+          name: "label",
+          widget: "string",
+          required: true,
+        },
+        {
+          label: "URL",
+          name: "url",
+          widget: "string",
+          required: true,
+        },
+      ],
+    },
+    {
       label: "Featured?",
       name: "featured",
       widget: "boolean",

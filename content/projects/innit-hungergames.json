@@ -9,5 +9,11 @@
     "sysadmin",
     "minecraft"
   ],
-  "slug": "innit-hungergames"
+  "slug": "innit-hungergames",
+  "links": [
+    {
+      "label": "Video",
+      "url": "https://youtu.be/OCSfKNhe-FU"
+    }
+  ]
 }

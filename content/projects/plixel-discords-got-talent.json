@@ -9,5 +9,11 @@
     "kubernetes",
     "minecraft"
   ],
-  "slug": "plixel-discords-got-talent"
+  "slug": "plixel-discords-got-talent",
+  "links": [
+    {
+      "label": "Trailer",
+      "url": "https://youtu.be/kFMniRKxhn0"
+    }
+  ]
 }

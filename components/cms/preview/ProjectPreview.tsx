@@ -16,6 +16,7 @@ export default function ProjectPreview({
     date: entry.getIn(["data", "date"]),
     featured: entry.getIn(["data", "tags"], false),
     thumbnail: entry.getIn(["data", "thumbnail"]),
+    links: entry.getIn(["data", "links"], []).toJS(),
   };
 
   return (

@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import ExternalLinkIcon from "../../assets/svg/logo/hero-external-link.svg";
 import { Project, ProjectTag } from "../../src/cms/types";
 
 interface ProjectTagProps {
@@ -39,6 +40,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </ul>
         <h3 className="text-white font-bold pb-2">{project.title}</h3>
         <span className="text-neutral-300">{project.description}</span>
+        {project.links.length > 0 && (
+          <a
+            className="block text-indigo-400 font-medium mt-2"
+            href={project.links[0].url}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <ExternalLinkIcon className="text-indigo-400 w-4 h-4 inline mr-2 align-middle" />
+            {project.links[0].label}
+          </a>
+        )}
       </div>
     </div>
   );

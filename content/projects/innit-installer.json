@@ -8,5 +8,11 @@
     "web",
     "minecraft"
   ],
-  "slug": "innit-installer"
+  "slug": "innit-installer",
+  "links": [
+    {
+      "label": "Preview",
+      "url": "https://streamable.com/eb3o1o"
+    }
+  ]
 }

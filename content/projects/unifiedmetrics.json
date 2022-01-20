@@ -8,5 +8,11 @@
     "monitoring",
     "minecraft"
   ],
-  "slug": "unifiedmetrics"
+  "slug": "unifiedmetrics",
+  "links": [
+    {
+      "url": "https://github.com/Cubxity/UnifiedMetrics",
+      "label": "GitHub"
+    }
+  ]
 }

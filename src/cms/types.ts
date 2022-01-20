@@ -14,4 +14,10 @@ export interface Project {
   readonly date: string;
   readonly featured: boolean;
   readonly thumbnail?: string;
+  readonly links: ProjectLink[];
+}
+
+export interface ProjectLink {
+  url: string;
+  label: string;
 }
