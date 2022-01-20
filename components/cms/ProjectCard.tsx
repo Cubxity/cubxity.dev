@@ -19,7 +19,7 @@ export interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="w-80 sm:w-auto bg-neutral-800 overflow-clip rounded-lg sm:hover:scale-[102%] transition-transform snap-center h-full">
+    <div className="flex flex-col w-80 sm:w-auto bg-neutral-800 overflow-clip rounded-lg sm:hover:scale-[102%] transition-transform snap-center h-full">
       <div className="aspect-video bg-black relative">
         {project.thumbnail && (
           <Image
@@ -30,7 +30,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           />
         )}
       </div>
-      <div className="p-4">
+      <div className="p-4 flex flex-col grow">
         <ul className="pb-3 flex gap-2">
           {project.tags.map((tag) => (
             <li key={tag}>
@@ -39,7 +39,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </ul>
         <h3 className="text-white font-bold pb-2">{project.title}</h3>
-        <span className="text-neutral-300">{project.description}</span>
+        <span className="text-neutral-300 grow">{project.description}</span>
         {project.links.length > 0 && (
           <a
             className="block text-indigo-400 font-medium mt-2"
