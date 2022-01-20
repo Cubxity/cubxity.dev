@@ -4,11 +4,11 @@ import React from "react";
 import BackgroundImage from "../assets/svg/background.svg";
 import SEO from "../components/SEO";
 import Projects from "../components/cms/Projects";
-import Card from "../components/data/Card";
 import Navigation from "../components/layout/Navigation";
 import ScrollArrow from "../components/layout/ScrollArrow";
 import SectionHeader from "../components/layout/SectionHeader";
 import Socials from "../components/layout/Socials";
+import ProcessSection from "../components/layout/section/ProcessSection";
 import { fetchProjects } from "../src/cms/content.server";
 import { Project } from "../src/cms/types";
 
@@ -63,31 +63,9 @@ export default function Index({ projects }: IndexProps) {
           </div>
         </section>
         <section id="process" className="py-8 md:py-12">
-          <div className="container px-4 m-auto">
-            <SectionHeader
-              title="Fulfilling The Process"
-              subtitle="Software development, from start to finish."
-            />
-            <div className="grid md:grid-cols-2 2xl:grid-cols-4 gap-6 pt-8 md:pt-12">
-              <Card
-                title="Design & Prototype"
-                subtitle="From UX design to system architecture design, ensuring a silky smooth user experience."
-              />
-              <Card
-                title="Full-stack development"
-                subtitle="From RESTful APIs to a friendly user interface, with scalability in mind."
-              />
-              <Card
-                title="Deployment"
-                subtitle="Managing deployments using Docker and Kubernetes on a Linux server."
-              />
-              <Card
-                title="System administration"
-                subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius interdum eros."
-              />
-            </div>
-          </div>
+          <ProcessSection />
         </section>
+        <div className="h-20" />
       </main>
     </>
   );
