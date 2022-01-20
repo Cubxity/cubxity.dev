@@ -62,13 +62,13 @@ const Tab = ({ icon: Icon, label, selected, onSelect }: TabProps) => {
     >
       <Icon
         className={clsx(
-          "text-gray-400 w-12 h-12 mb-3 transition-colors ",
+          "text-gray-400 w-8 h-8 md:w-12 md:h-12 mb-3 transition-colors ",
           selected && "text-indigo-400"
         )}
       />
       <span
         className={clsx(
-          "text-sm text-gray-400 font-bold transition-colors",
+          "text-xs md:text-sm text-gray-400 font-bold transition-colors",
           selected && "text-indigo-400"
         )}
       >
@@ -88,7 +88,7 @@ export default function ProcessSection() {
         subtitle="Software development, from start to finish."
       />
       <div className="flex flex-col">
-        <div className="flex flex-row mt-12 gap-10 md:flex-1">
+        <div className="flex flex-row mt-12 gap-8 sm:gap-10 md:flex-1">
           <Tab
             icon={GlobeIcon}
             label="Frontend"
