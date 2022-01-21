@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 
 import SEO from "../components/SEO";
-import Navigation from "../components/layout/Navigation";
 
 export default function NotFound() {
   return (
@@ -21,7 +20,6 @@ export default function NotFound() {
         ]}
       />
       <div className="h-screen min-h-[40rem] bg-gradient-to-bl from-gray-900 to-black flex flex-col relative">
-        <Navigation />
         <header className="container m-auto px-4">
           <div className="lg:w-1/2">
             <h1 className="text-7xl md:text-8xl text-white font-medium py-8">

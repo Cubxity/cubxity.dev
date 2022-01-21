@@ -4,7 +4,6 @@ import React from "react";
 import BackgroundImage from "../assets/svg/background.svg";
 import SEO from "../components/SEO";
 import Projects from "../components/cms/Projects";
-import Navigation from "../components/layout/Navigation";
 import ScrollArrow from "../components/layout/ScrollArrow";
 import SectionHeader from "../components/layout/SectionHeader";
 import Socials from "../components/layout/Socials";
@@ -33,8 +32,7 @@ export default function Index({ projects }: IndexProps) {
         ]}
       />
       <div className="h-screen min-h-[40rem] max-h-[80rem] bg-gradient-to-bl from-gray-900 to-black flex flex-col relative">
-        <Navigation />
-        <header className="container m-auto px-4">
+        <header className="container m-auto pt-4 px-4">
           <div className="lg:w-1/2">
             <span className="text-2xl text-gray-300 font-medium">
               Hey, I&apos;m

@@ -1,19 +1,21 @@
+import clsx from "clsx";
 import NextLink from "next/link";
 import React from "react";
 
 export interface LinkProps {
   href: string;
+  className?: string;
   children: string;
 }
 
 export default function Link(props: LinkProps) {
-  const {href, children} = props;
+  const { href, className, children } = props;
 
   return (
     <NextLink href={href} passHref>
-      <a className="text-sm text-white font-medium">
+      <a className={clsx("text-sm text-white font-medium transition-colors hover:text-indigo-400", className)}>
         {children}
       </a>
     </NextLink>
-  )
+  );
 }
