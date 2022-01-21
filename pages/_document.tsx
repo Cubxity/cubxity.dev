@@ -9,7 +9,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html className="dark scroll-smooth bg-background" lang="en">
-        <Head />
+        <Head>
+          <link rel="shortcut icon" href="/favicon.png" />
+        </Head>
         <body>
           <Main />
           <NextScript />
