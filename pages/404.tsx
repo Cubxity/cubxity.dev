@@ -31,7 +31,7 @@ export default function NotFound() {
               Beep boop? The content you were looking for is not found.
             </span>
             <Link href="/" passHref>
-              <a className="text-white text-xl font-bold my-8 block">
+              <a className="text-white text-xl font-bold my-8 block hover:text-indigo-400 transition-colors">
                 Take me home!
               </a>
             </Link>
