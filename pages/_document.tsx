@@ -10,7 +10,7 @@ class MyDocument extends Document {
     return (
       <Html className="dark scroll-smooth bg-background" lang="en">
         <Head>
-          <link rel="shortcut icon" href="/favicon.png" />
+          <link rel="shortcut icon" href="/assets/logo/128x-circle.png" />
         </Head>
         <body>
           <Main />
