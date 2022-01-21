@@ -5,7 +5,7 @@ import IconButton from "../IconButton";
 
 export default function Socials() {
   return (
-    <div className="py-4 space-x-4">
+    <div className="pt-4 space-x-4">
       <IconButton
         icon={GitHubIcon}
         label="github"
