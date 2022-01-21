@@ -7,7 +7,7 @@ export const projects: CmsCollection = {
   folder: "content/projects",
   create: true,
   format: "json",
-  sortable_fields: ["date"],
+  sortable_fields: ["created"],
   slug: "{{slug}}",
   fields: [
     {
@@ -36,8 +36,8 @@ export const projects: CmsCollection = {
       required: true,
     },
     {
-      label: "Date",
-      name: "date",
+      label: "Created",
+      name: "created",
       widget: "datetime",
       required: true,
     },

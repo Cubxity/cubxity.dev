@@ -13,7 +13,7 @@ export default function ProjectPreview({
     title: entry.getIn(["data", "title"]),
     description: entry.getIn(["data", "description"]),
     tags: entry.getIn(["data", "tags"], []),
-    date: entry.getIn(["data", "date"]),
+    created: entry.getIn(["data", "created"]),
     featured: entry.getIn(["data", "tags"], false),
     thumbnail: entry.getIn(["data", "thumbnail"]),
     links: entry.getIn(["data", "links"], []).toJS(),

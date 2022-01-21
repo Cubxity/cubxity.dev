@@ -11,7 +11,7 @@ export interface Project {
   readonly title: string;
   readonly description: string;
   readonly tags: ProjectTag[];
-  readonly date: string;
+  readonly created: string;
   readonly featured: boolean;
   readonly thumbnail?: string;
   readonly links: ProjectLink[];
