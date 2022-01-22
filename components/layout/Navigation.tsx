@@ -32,12 +32,12 @@ export default function Navigation() {
       <ul className="container mx-auto flex flex-row items-center gap-8">
         <li>
           <NextLink href="/" passHref>
-            <a className="block leading-[0]">
+            <a className="block leading-[0] rounded-full overflow-clip">
               <Image
                 src={Avatar}
                 width={32}
                 height={32}
-                className="rounded-full align-middle"
+                className="align-middle"
                 alt="Cubxity"
                 placeholder="blur"
                 priority
