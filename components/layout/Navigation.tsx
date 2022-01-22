@@ -39,6 +39,8 @@ export default function Navigation() {
                 height={32}
                 className="rounded-full align-middle"
                 alt="Cubxity"
+                placeholder="blur"
+                priority
               />
             </a>
           </NextLink>
