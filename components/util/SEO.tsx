@@ -22,7 +22,7 @@ export default function SEO(props: SEOProps) {
       <meta property="og:site_name" content="Cubxity - Fullstack Developer" />
       <meta property="og:image" content="/assets/logo/256x.png" />
       <meta property="twitter:card" content="summary" />
-      <meta property="twitter:creator" content="Cubxity" />
+      <meta property="twitter:creator" content="@cubxity" />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content="/assets/logo/256x.png" />

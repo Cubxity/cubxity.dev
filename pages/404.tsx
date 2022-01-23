@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-import SEO from "../components/SEO";
+import SEO from "../components/util/SEO";
 
 export default function NotFound() {
   return (

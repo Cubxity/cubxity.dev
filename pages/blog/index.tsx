@@ -1,8 +1,8 @@
 import { GetStaticProps } from "next";
 import React from "react";
 
-import SEO from "../../components/SEO";
 import Posts from "../../components/cms/Posts";
+import SEO from "../../components/util/SEO";
 import { fetchPosts } from "../../src/cms/content.server";
 import { Post } from "../../src/cms/types";
 

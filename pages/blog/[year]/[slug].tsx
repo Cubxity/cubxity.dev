@@ -3,8 +3,8 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import React, { ReactNode } from "react";
 
-import SEO from "../../../components/SEO";
 import PostLayout from "../../../components/layout/PostLayout";
+import PostSEO from "../../../components/util/PostSEO";
 import { fetchPost, listPosts } from "../../../src/cms/content.server";
 import { Post } from "../../../src/cms/types";
 
@@ -20,11 +20,7 @@ const components: Record<string, ReactNode> = {
 export default function PostPage({ post, source }: PostPageProps) {
   return (
     <>
-      <SEO
-        title={post.title}
-        description={post.description}
-        keywords={["cubxity", "developer", "blog", ...post.tags]}
-      />
+      <PostSEO post={post} />
       <PostLayout post={post}>
         <MDXRemote {...source} components={components} />
       </PostLayout>
