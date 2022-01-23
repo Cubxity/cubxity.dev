@@ -6,7 +6,7 @@ export interface PreviewContainerProps {
 
 export default function PreviewContainer({ children }: PreviewContainerProps) {
   return (
-    <div className="inset-0 bg-background p-8 w-screen h-screen preview-bg-grid">
+    <div className="inset-0 bg-background p-8 min-h-screen preview-bg-grid">
       {children}
     </div>
   );

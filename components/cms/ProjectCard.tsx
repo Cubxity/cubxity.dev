@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 import ExternalLinkIcon from "../../assets/svg/logo/hero-external-link.svg";
-import { Project, ProjectTag } from "../../src/cms/types";
+import { Project } from "../../src/cms/types";
 
 interface ProjectTagProps {
-  tag: ProjectTag;
+  tag: string;
 }
 
 const ProjectTag = ({ tag }: ProjectTagProps) => {

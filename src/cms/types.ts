@@ -1,16 +1,8 @@
-export type ProjectTag =
-  | "full-stack"
-  | "web"
-  | "backend"
-  | "minecraft"
-  | "devops"
-  | "sysadmin";
-
 export interface Project {
   readonly slug: string;
   readonly title: string;
   readonly description: string;
-  readonly tags: ProjectTag[];
+  readonly tags: string[];
   readonly created: string;
   readonly featured: boolean;
   readonly thumbnail?: string;
@@ -20,4 +12,18 @@ export interface Project {
 export interface ProjectLink {
   url: string;
   label: string;
+}
+
+export interface Post {
+  readonly slug: string;
+  readonly title: string;
+  readonly description: string;
+  readonly tags: string[];
+  readonly created: string;
+  readonly updated: string;
+  readonly thumbnail?: string;
+  readonly body: string;
+
+  // Injected
+  readonly year: number;
 }

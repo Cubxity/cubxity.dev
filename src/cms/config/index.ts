@@ -1,6 +1,9 @@
 import { CMS, CmsConfig } from "netlify-cms-core";
-import { projects } from "./collections";
+
+import PostPreview from "../../../components/cms/preview/PostPreview";
 import ProjectPreview from "../../../components/cms/preview/ProjectPreview";
+
+import { projects, posts } from "./collections";
 
 const config: CmsConfig = {
   backend: {
@@ -17,9 +20,9 @@ const config: CmsConfig = {
   },
   load_config_file: false,
   local_backend: true,
-  media_folder: "public/content/media/",
+  media_folder: "/public/content/media/",
   public_folder: "/content/media/",
-  collections: [projects],
+  collections: [projects, posts],
 };
 
 export const initCMS = async (cms: CMS) => {
@@ -28,4 +31,5 @@ export const initCMS = async (cms: CMS) => {
   cms.registerPreviewStyle("/admin/main.css");
   cms.registerPreviewStyle("/admin/preview.css");
   cms.registerPreviewTemplate("projects", ProjectPreview);
+  cms.registerPreviewTemplate("posts", PostPreview);
 };

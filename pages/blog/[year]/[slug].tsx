@@ -1,0 +1,51 @@
+import { GetStaticPaths, GetStaticProps } from "next";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import React from "react";
+
+import SEO from "../../../components/SEO";
+import PostLayout from "../../../components/layout/PostLayout";
+import { fetchPost, listPosts } from "../../../src/cms/content.server";
+import { Post } from "../../../src/cms/types";
+
+interface PostPageProps {
+  post: Omit<Post, "body">;
+  source: MDXRemoteSerializeResult;
+}
+
+export default function PostPage({ post, source }: PostPageProps) {
+  return (
+    <>
+      <SEO
+        title={post.title}
+        description={post.description}
+        keywords={["cubxity", "developer", "blog", ...post.tags]}
+      />
+      <PostLayout post={post}>
+        <MDXRemote {...source} />
+      </PostLayout>
+    </>
+  );
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { year, slug } = context.params;
+  const post = await fetchPost(year as string, slug as string);
+  const source = await serialize(post.body);
+
+  return {
+    props: {
+      post: { ...post, body: null },
+      source,
+    },
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await listPosts();
+
+  return {
+    paths: posts.map((post) => ({ params: post })),
+    fallback: false,
+  };
+};

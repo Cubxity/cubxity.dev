@@ -6,12 +6,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "background": "#080708"
+        background: "#080708",
       },
       fontFamily: {
-        sans: ["Poppins", "Roboto", "Open Sans", "ui-sans-serif", "system-ui", "sans-serif"]
-      }
+        sans: [
+          "Poppins",
+          "Roboto",
+          "Open Sans",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+      },
     },
   },
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/typography")],
+};
