@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import React from "react";
+import React, { ReactNode } from "react";
 
 import SEO from "../../../components/SEO";
 import PostLayout from "../../../components/layout/PostLayout";
@@ -13,6 +13,10 @@ interface PostPageProps {
   source: MDXRemoteSerializeResult;
 }
 
+const components: Record<string, ReactNode> = {
+  a: (props) => <a {...props} rel="noreferrer" target="_blank" />,
+};
+
 export default function PostPage({ post, source }: PostPageProps) {
   return (
     <>
@@ -22,7 +26,7 @@ export default function PostPage({ post, source }: PostPageProps) {
         keywords={["cubxity", "developer", "blog", ...post.tags]}
       />
       <PostLayout post={post}>
-        <MDXRemote {...source} />
+        <MDXRemote {...source} components={components} />
       </PostLayout>
     </>
   );
