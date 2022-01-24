@@ -4,7 +4,7 @@ import NextLink from "next/link";
 import React, { useEffect, useState } from "react";
 
 import Avatar from "../../public/assets/logo/256x.png";
-import Link from "../Link";
+import Link from "../input/Link";
 
 export default function Navigation() {
   const [scroll, setScroll] = useState(false);

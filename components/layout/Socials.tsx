@@ -1,7 +1,7 @@
 import DiscordIcon from "../../assets/svg/logo/fa-discord.svg";
 import GitHubIcon from "../../assets/svg/logo/fa-github.svg";
 import TwitterIcon from "../../assets/svg/logo/fa-twitter.svg";
-import IconButton from "../IconButton";
+import IconButton from "../input/IconButton";
 
 export default function Socials() {
   return (
