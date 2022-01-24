@@ -36,7 +36,7 @@ export default function Blog({ posts }: BlogProps) {
         </div>
       </header>
       <main>
-        <section id="posts" className="container mx-auto">
+        <section id="posts" className="container px-4 mx-auto">
           <Posts posts={posts} />
         </section>
       </main>
