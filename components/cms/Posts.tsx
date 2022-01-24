@@ -8,7 +8,7 @@ export interface Posts {
 
 export default function Posts({ posts }: Posts) {
   return (
-    <ul className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 pt-8 md:pt-12">
+    <ul className="grid gap-6 pt-8 md:grid-cols-2 md:pt-12 xl:grid-cols-4">
       {posts.map((post, i) => (
         <li key={i}>
           <PostCard post={post} />

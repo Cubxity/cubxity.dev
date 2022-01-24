@@ -19,35 +19,35 @@ export default function NotFound() {
           "contact",
         ]}
       />
-      <div className="h-screen min-h-[40rem] bg-gradient-to-bl from-gray-900 to-black flex flex-col relative">
+      <div className="relative flex h-screen min-h-[40rem] flex-col bg-gradient-to-bl from-gray-900 to-black">
         <header className="container m-auto px-4">
           <div className="lg:w-1/2">
-            <h1 className="text-7xl md:text-8xl text-white font-medium py-8">
+            <h1 className="py-8 text-7xl font-medium text-white md:text-8xl">
               Contact
             </h1>
-            <span className="text-xl md:text-2xl text-gray-400 leading-relaxed md:leading-relaxed">
+            <span className="text-xl leading-relaxed text-gray-400 md:text-2xl md:leading-relaxed">
               Got an idea? Let&apos;s get work done.
             </span>
             <ul className="flex flex-row gap-8">
               <li>
                 <a
-                  className="text-white font-bold my-8 block hover:text-indigo-400 transition-colors"
+                  className="my-8 block font-bold text-white transition-colors hover:text-indigo-400"
                   href="mailto:contact@cubxity.dev"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <AtIcon className="inline w-4 h-4 mr-3" />
+                  <AtIcon className="mr-3 inline h-4 w-4" />
                   Send an email
                 </a>
               </li>
               <li>
                 <a
-                  className="text-white font-bold my-8 block hover:text-indigo-400 transition-colors"
+                  className="my-8 block font-bold text-white transition-colors hover:text-indigo-400"
                   href="https://twitter.com/cubxity"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <TwitterLogo className="inline w-4 h-4 mr-3" />
+                  <TwitterLogo className="mr-3 inline h-4 w-4" />
                   Message on Twitter
                 </a>
               </li>

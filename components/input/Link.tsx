@@ -13,7 +13,12 @@ export default function Link(props: LinkProps) {
 
   return (
     <NextLink href={href} passHref>
-      <a className={clsx("text-sm text-white font-medium transition-colors hover:text-indigo-400", className)}>
+      <a
+        className={clsx(
+          "text-sm font-medium text-white transition-colors hover:text-indigo-400",
+          className
+        )}
+      >
         {children}
       </a>
     </NextLink>

@@ -18,11 +18,11 @@ export default function IconButton(props: IconButtonProps) {
         href={href}
         rel="noreferrer"
         target="_blank"
-        className="p-2 w-min h-min rounded-full transition-colors hover:bg-white/20 inline-block"
+        className="inline-block h-min w-min rounded-full p-2 transition-colors hover:bg-white/20"
         onClick={onClick}
         aria-label={label}
       >
-        <Icon className="text-white w-6 h-6" />
+        <Icon className="h-6 w-6 text-white" />
       </a>
     );
 
@@ -39,11 +39,11 @@ export default function IconButton(props: IconButtonProps) {
 
   return (
     <button
-      className="p-2 w-min h-min rounded-full transition-colors hover:bg-white/20"
+      className="h-min w-min rounded-full p-2 transition-colors hover:bg-white/20"
       onClick={onClick}
       aria-label={label}
     >
-      <Icon className="text-white w-6 h-6" />
+      <Icon className="h-6 w-6 text-white" />
     </button>
   );
 }

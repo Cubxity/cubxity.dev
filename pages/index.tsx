@@ -32,28 +32,28 @@ export default function Index({ projects }: IndexProps) {
           "resume",
         ]}
       />
-      <div className="h-screen min-h-[40rem] max-h-[80rem] bg-gradient-to-bl from-gray-900 to-black flex flex-col relative">
+      <div className="relative flex h-screen max-h-[80rem] min-h-[40rem] flex-col bg-gradient-to-bl from-gray-900 to-black">
         <header className="container m-auto px-4">
           <div className="lg:w-1/2">
-            <span className="text-2xl text-gray-300 font-medium">
+            <span className="text-2xl font-medium text-gray-300">
               Hey, I&apos;m
             </span>
-            <h1 className="text-7xl md:text-8xl text-white font-medium py-8">
+            <h1 className="py-8 text-7xl font-medium text-white md:text-8xl">
               Cubxity
             </h1>
-            <span className="text-xl md:text-2xl text-gray-400 leading-relaxed md:leading-relaxed">
+            <span className="text-xl leading-relaxed text-gray-400 md:text-2xl md:leading-relaxed">
               Full-stack developer with 5+ years of experience. System
               administrator and DevOps engineer.
             </span>
             <Socials />
           </div>
-          <BackgroundImage className="invisible lg:visible absolute right-0 top-0 bottom-0 h-full" />
+          <BackgroundImage className="invisible absolute right-0 top-0 bottom-0 h-full lg:visible" />
         </header>
         <ScrollArrow />
       </div>
       <main className="scroll-my-20">
-        <section id="projects" className="py-8 md:py-12 scroll-my-20">
-          <div className="container px-4 m-auto">
+        <section id="projects" className="scroll-my-20 py-8 md:py-12">
+          <div className="container m-auto px-4">
             <SectionHeader
               title="Featured Projects"
               subtitle="A mix of personal and commissioned projects."
@@ -61,12 +61,12 @@ export default function Index({ projects }: IndexProps) {
             <Projects projects={projects} />
           </div>
         </section>
-        <section id="process" className="py-8 md:py-12 scroll-my-20">
+        <section id="process" className="scroll-my-20 py-8 md:py-12">
           <ProcessSection />
         </section>
         <div className="h-20" />
       </main>
-        <ContactSection />
+      <ContactSection />
     </>
   );
 }

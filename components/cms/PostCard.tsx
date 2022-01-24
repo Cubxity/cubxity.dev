@@ -9,7 +9,7 @@ interface PostTagProps {
 
 const PostTag = ({ tag }: PostTagProps) => {
   return (
-    <span className="text-xs text-neutral-400 font-bold uppercase">#{tag}</span>
+    <span className="text-xs font-bold uppercase text-neutral-400">#{tag}</span>
   );
 };
 
@@ -19,10 +19,10 @@ export interface PostCardProps {
 
 export default function PostCard({ post }: PostCardProps) {
   return (
-    <article className="flex flex-col bg-neutral-800 overflow-clip rounded-lg sm:hover:scale-[102%] transition-transform snap-center h-full">
+    <article className="flex h-full snap-center flex-col overflow-clip rounded-lg bg-neutral-800 transition-transform sm:hover:scale-[102%]">
       <Link href={`/blog/${post.year}/${post.slug}`} passHref>
         <a>
-          <div className="aspect-video bg-black relative">
+          <div className="relative aspect-video bg-black">
             {post.thumbnail && (
               <Image
                 src={post.thumbnail}
@@ -32,17 +32,17 @@ export default function PostCard({ post }: PostCardProps) {
               />
             )}
           </div>
-          <div className="p-4 flex flex-col grow">
-            <ul className="pb-3 flex gap-2">
+          <div className="flex grow flex-col p-4">
+            <ul className="flex gap-2 pb-3">
               {post.tags.map((tag) => (
                 <li key={tag}>
                   <PostTag tag={tag} />
                 </li>
               ))}
             </ul>
-            <h3 className="text-white font-bold pb-2">{post.title}</h3>
-            <span className="text-neutral-300 grow">{post.description}</span>
-            <span className="text-neutral-500 mt-2">
+            <h3 className="pb-2 font-bold text-white">{post.title}</h3>
+            <span className="grow text-neutral-300">{post.description}</span>
+            <span className="mt-2 text-neutral-500">
               {new Date(post.created).toDateString()}
             </span>
           </div>

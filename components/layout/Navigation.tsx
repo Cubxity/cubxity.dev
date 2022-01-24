@@ -22,16 +22,16 @@ export default function Navigation() {
   return (
     <nav
       className={clsx(
-        "fixed top-0 left-0 right-0 px-4 py-6 z-50 transition-all duration-500",
+        "fixed top-0 left-0 right-0 z-50 px-4 py-6 transition-all duration-500",
         scroll && "bg-background shadow-2xl"
       )}
     >
       <noscript>
-        <div className="absolute top-0 bottom-0 left-0 right-0 bg-background shadow-2xl -z-10" />
+        <div className="absolute top-0 bottom-0 left-0 right-0 -z-10 bg-background shadow-2xl" />
       </noscript>
       <div className="container mx-auto flex flex-row items-center gap-8">
         <NextLink href="/" passHref>
-          <a className="block leading-[0] rounded-full overflow-clip">
+          <a className="block overflow-clip rounded-full leading-[0]">
             <Image
               src={Avatar}
               width={32}
@@ -49,7 +49,7 @@ export default function Navigation() {
         <NextLink href="/contact" passHref>
           <a
             role="button"
-            className="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-full"
+            className="rounded-full bg-indigo-600 px-4 py-2 text-sm font-medium text-white"
           >
             Contact
           </a>

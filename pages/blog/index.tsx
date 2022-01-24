@@ -27,16 +27,16 @@ export default function Blog({ posts }: BlogProps) {
       />
       <header className="container m-auto px-4 pt-36 pb-16">
         <div className="lg:w-1/2">
-          <h1 className="text-5xl md:text-6xl text-white font-medium py-8">
+          <h1 className="py-8 text-5xl font-medium text-white md:text-6xl">
             Blog
           </h1>
-          <span className="text-xl md:text-2xl text-gray-400 leading-relaxed md:leading-relaxed">
+          <span className="text-xl leading-relaxed text-gray-400 md:text-2xl md:leading-relaxed">
             Welcome to my blog!
           </span>
         </div>
       </header>
       <main>
-        <section id="posts" className="container px-4 mx-auto">
+        <section id="posts" className="container mx-auto px-4">
           <Posts posts={posts} />
         </section>
       </main>

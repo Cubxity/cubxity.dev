@@ -39,9 +39,9 @@ interface ProcessItemProps {
 
 const ProcessItem = ({ icon: Icon, label }: ProcessItemProps) => {
   return (
-    <div className="bg-neutral-800 rounded-lg p-6 sm:hover:scale-[102%] transition-transform">
-      <Icon className="text-white w-6 h-6 inline mr-6" />
-      <span className="text-white font-bold">{label}</span>
+    <div className="rounded-lg bg-neutral-800 p-6 transition-transform sm:hover:scale-[102%]">
+      <Icon className="mr-6 inline h-6 w-6 text-white" />
+      <span className="font-bold text-white">{label}</span>
     </div>
   );
 };
@@ -63,13 +63,13 @@ const Tab = ({ icon: Icon, label, selected, onSelect }: TabProps) => {
     >
       <Icon
         className={clsx(
-          "text-gray-400 w-8 h-8 md:w-12 md:h-12 mb-3 transition-colors ",
+          "mb-3 h-8 w-8 text-gray-400 transition-colors md:h-12 md:w-12 ",
           selected && "text-indigo-400"
         )}
       />
       <span
         className={clsx(
-          "text-xs md:text-sm text-gray-400 font-bold transition-colors",
+          "text-xs font-bold text-gray-400 transition-colors md:text-sm",
           selected && "text-indigo-400"
         )}
       >
@@ -83,13 +83,13 @@ export default function ProcessSection() {
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
-    <div className="container px-4 m-auto">
+    <div className="container m-auto px-4">
       <SectionHeader
         title="Fulfilling The Process"
         subtitle="Software development, from start to finish."
       />
       <div className="flex flex-col">
-        <div className="flex flex-row mt-12 gap-8 sm:gap-10 md:flex-1">
+        <div className="mt-12 flex flex-row gap-8 sm:gap-10 md:flex-1">
           <Tab
             icon={GlobeIcon}
             label="Frontend"
@@ -115,7 +115,7 @@ export default function ProcessSection() {
             onSelect={() => setSelectedTab(3)}
           />
         </div>
-        <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-4 md:flex-1 h-min">
+        <div className="mt-8 grid h-min gap-4 sm:grid-cols-2 md:flex-1 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6">
           {selectedTab === 0 && (
             <>
               <ProcessItem icon={NextJSLogo} label="Next.js" />
