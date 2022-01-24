@@ -29,7 +29,8 @@ import PostgreSQLLogo from "../../../assets/svg/logo/logos-postgresql.svg";
 import PrometheusLogo from "../../../assets/svg/logo/logos-prometheus.svg";
 import TailwindCSSLogo from "../../../assets/svg/logo/logos-tailwindcss.svg";
 import TypeScriptLogo from "../../../assets/svg/logo/logos-typescript.svg";
-import SectionHeader from "../SectionHeader";
+
+import SectionHeader from "./SectionHeader";
 
 interface ProcessItemProps {
   icon: FunctionComponent<any>;

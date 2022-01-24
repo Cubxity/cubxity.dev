@@ -29,25 +29,32 @@ export default function Navigation() {
       <noscript>
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-background shadow-2xl -z-10" />
       </noscript>
-      <ul className="container mx-auto flex flex-row items-center gap-8">
-        <li>
-          <NextLink href="/" passHref>
-            <a className="block leading-[0] rounded-full overflow-clip">
-              <Image
-                src={Avatar}
-                width={32}
-                height={32}
-                className="align-middle"
-                alt="Cubxity"
-                priority
-              />
-            </a>
-          </NextLink>
-        </li>
+      <div className="container mx-auto flex flex-row items-center gap-8">
+        <NextLink href="/" passHref>
+          <a className="block leading-[0] rounded-full overflow-clip">
+            <Image
+              src={Avatar}
+              width={32}
+              height={32}
+              className="align-middle"
+              alt="Cubxity"
+              priority
+            />
+          </a>
+        </NextLink>
         <li>
           <Link href="/blog">Blog</Link>
         </li>
-      </ul>
+        <div className="grow" />
+        <NextLink href="/contact" passHref>
+          <a
+            role="button"
+            className="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-full"
+          >
+            Contact
+          </a>
+        </NextLink>
+      </div>
     </nav>
   );
 }

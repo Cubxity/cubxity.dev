@@ -4,12 +4,13 @@ import React from "react";
 import BackgroundImage from "../assets/svg/background.svg";
 import Projects from "../components/cms/Projects";
 import ScrollArrow from "../components/layout/ScrollArrow";
-import SectionHeader from "../components/layout/SectionHeader";
+import SectionHeader from "../components/layout/section/SectionHeader";
 import Socials from "../components/layout/Socials";
 import ProcessSection from "../components/layout/section/ProcessSection";
 import SEO from "../components/util/SEO";
 import { fetchProjects } from "../src/cms/content.server";
 import { Project } from "../src/cms/types";
+import ContactSection from "../components/layout/section/ContactSection";
 
 export interface IndexProps {
   projects: Project[];
@@ -65,6 +66,7 @@ export default function Index({ projects }: IndexProps) {
         </section>
         <div className="h-20" />
       </main>
+        <ContactSection />
     </>
   );
 }
