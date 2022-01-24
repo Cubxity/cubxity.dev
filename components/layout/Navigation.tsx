@@ -42,9 +42,7 @@ export default function Navigation() {
             />
           </a>
         </NextLink>
-        <li>
-          <Link href="/blog">Blog</Link>
-        </li>
+        <Link href="/blog">Blog</Link>
         <div className="grow" />
         <NextLink href="/contact" passHref>
           <a
