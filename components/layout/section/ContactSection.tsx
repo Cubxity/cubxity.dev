@@ -12,7 +12,7 @@ export default function ContactSection() {
         <NextLink href="/contact" passHref>
           <a
             role="button"
-            className="rounded-lg bg-indigo-600 px-6 py-4 font-bold text-white md:text-lg"
+            className="py-2 rounded-lg bg-indigo-600 px-4 font-bold text-white sm:px-6 sm:py-4 md:text-lg"
           >
             Contact
           </a>

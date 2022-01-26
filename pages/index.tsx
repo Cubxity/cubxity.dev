@@ -52,14 +52,17 @@ export default function Index({ projects }: IndexProps) {
         <ScrollArrow />
       </div>
       <main className="scroll-my-20">
-        <section id="projects" className="scroll-my-20 py-8 md:py-12">
-          <div className="container m-auto px-4">
+        <section
+          id="projects"
+          className="container m-auto scroll-my-20 py-8 md:py-12"
+        >
+          <div className="px-4">
             <SectionHeader
               title="Featured Projects"
               subtitle="A mix of personal and commissioned projects."
             />
-            <Projects projects={projects} />
           </div>
+          <Projects projects={projects} />
         </section>
         <section id="process" className="scroll-my-20 py-8 md:py-12">
           <ProcessSection />
