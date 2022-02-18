@@ -1,0 +1,18 @@
+{
+  "created": "2022-02-18T17:21:54.700Z",
+  "slug": "website",
+  "title": "My Personal Website",
+  "description": "My personal website, cubxity.dev - built on top of modern web technology",
+  "tags": [
+    "web",
+    "frontend"
+  ],
+  "thumbnail": "/content/media/website.png",
+  "featured": true,
+  "links": [
+    {
+      "label": "Blog",
+      "url": "/blog/2022/hello-brand-new-site"
+    }
+  ]
+}

@@ -32,7 +32,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
       <div className="flex grow flex-col p-4">
         <ul className="flex gap-2 pb-3">
-          {project.tags.map((tag) => (
+          {project.tags?.map((tag) => (
             <li key={tag}>
               <ProjectTag tag={tag} />
             </li>
@@ -40,12 +40,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </ul>
         <h3 className="pb-2 font-bold text-white">{project.title}</h3>
         <span className="grow text-neutral-300">{project.description}</span>
-        {project.links.length > 0 && (
+        {project.links?.length > 0 && (
           <a
             className="mt-2 block font-medium text-indigo-400"
             href={project.links[0].url}
             rel="noreferrer"
-            target="_blank"
+            target={project.links[0].url.startsWith("/") ? undefined : "_blank"}
           >
             <ExternalLinkIcon className="mr-2 inline h-4 w-4 align-middle text-indigo-400" />
             {project.links[0].label}
