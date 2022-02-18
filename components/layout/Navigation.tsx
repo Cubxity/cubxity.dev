@@ -10,14 +10,14 @@ export default function Navigation() {
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY > 64);
+    };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleScroll = () => {
-    setScroll(window.scrollY > 64);
-  };
+  }, [setScroll]);
 
   return (
     <nav
