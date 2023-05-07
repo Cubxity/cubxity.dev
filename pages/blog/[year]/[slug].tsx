@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import React, { ReactNode } from "react";
+import React, { FC } from "react";
 
 import PostLayout from "../../../components/layout/PostLayout";
 import PostSEO from "../../../components/util/PostSEO";
@@ -13,7 +13,7 @@ interface PostPageProps {
   source: MDXRemoteSerializeResult;
 }
 
-const components: Record<string, ReactNode> = {
+const components: Record<string, FC> = {
   a: (props) => <a {...props} rel="noreferrer" target="_blank" />,
 };
 
@@ -44,8 +44,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await listPosts();
 
+  console.log(posts);
   return {
-    paths: posts.map((post) => ({ params: post })),
+    paths: posts.map((post) => ({
+      params: {
+        year: String(post.year),
+        slug: post.slug,
+      },
+    })),
     fallback: false,
   };
 };

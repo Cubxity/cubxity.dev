@@ -28,10 +28,11 @@ export default function NotFound() {
             <span className="text-xl leading-relaxed text-gray-400 md:text-2xl md:leading-relaxed">
               Beep boop? The content you were looking for is not found.
             </span>
-            <Link href="/" passHref>
-              <a className="my-8 block text-xl font-bold text-white transition-colors hover:text-indigo-400">
-                Take me home!
-              </a>
+            <Link
+              href="/"
+              className="my-8 block text-xl font-bold text-white transition-colors hover:text-indigo-400"
+            >
+              Take me home!
             </Link>
           </div>
         </header>

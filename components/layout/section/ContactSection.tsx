@@ -9,13 +9,12 @@ export default function ContactSection() {
           Let&apos;s work together!
         </span>
         <div className="grow" />
-        <NextLink href="/contact" passHref>
-          <a
-            role="button"
-            className="py-2 rounded-lg bg-indigo-600 px-4 font-bold text-white sm:px-6 sm:py-4 md:text-lg"
-          >
-            Contact
-          </a>
+        <NextLink
+          href="/contact"
+          role="button"
+          className="py-2 rounded-lg bg-indigo-600 px-4 font-bold text-white sm:px-6 sm:py-4 md:text-lg"
+        >
+          Contact
         </NextLink>
       </div>
     </section>

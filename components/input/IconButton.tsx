@@ -13,8 +13,9 @@ export default function IconButton(props: IconButtonProps) {
   const { icon: Icon, label, href, external, onClick } = props;
 
   if (href) {
-    const a = (
-      <a
+    const Component = external ? "a" : Link;
+    return (
+      <Component
         href={href}
         rel="noreferrer"
         target="_blank"
@@ -23,18 +24,8 @@ export default function IconButton(props: IconButtonProps) {
         aria-label={label}
       >
         <Icon className="h-6 w-6 text-white" />
-      </a>
+      </Component>
     );
-
-    if (external) {
-      return a;
-    } else {
-      return (
-        <Link href={href} passHref>
-          {a}
-        </Link>
-      );
-    }
   }
 
   return (
