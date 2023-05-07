@@ -10,7 +10,7 @@ export default function SEO(props: SEOProps) {
   const { title, description, keywords } = props;
   return (
     <Head>
-      <title>{title} | Cubxity - Full-stack Developer</title>
+      <title>{`${title} | Cubxity - Full-stack Developer`}</title>
 
       <meta name="author" content="Cubxity" />
       <meta name="description" content={description} />
