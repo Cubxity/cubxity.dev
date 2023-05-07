@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { join, basename } from "path";
+import { join, basename, dirname } from "path";
 import { promisify } from "util";
 
 import matter from "gray-matter";
@@ -43,12 +43,13 @@ async function* recurseDirectory(root: string): AsyncGenerator<string> {
 const readFile = async <T>(path: string): Promise<T | undefined> => {
   const content = await readFileAsync(path, "utf8");
   const stat = await lstatAsync(path);
+  const year = Number(basename(dirname(path)));
 
   if (path.endsWith(".json")) {
     const json = JSON.parse(content);
     return {
       ...json,
-      year: stat.ctime.getUTCFullYear(),
+      year,
     };
   } else if (path.endsWith(".mdx")) {
     const matterFile = matter(content);
@@ -62,7 +63,7 @@ const readFile = async <T>(path: string): Promise<T | undefined> => {
     return {
       ...matterFile.data,
       body: matterFile.content,
-      year: stat.ctime.getUTCFullYear(),
+      year,
     } as unknown as T;
   }
 };
@@ -75,8 +76,8 @@ export const fetchPosts = (): Promise<Post[]> => readFiles<Post>("posts");
 export const fetchPost = (year: string, slug: string): Promise<Post> =>
   readFile(join("content", "posts", basename(year), basename(slug) + ".mdx"));
 
-export const listPosts = async (): Promise<Pick<Post, "year" & "slug">[]> => {
-  const list: Pick<Post, "year" & "slug">[] = [];
+export const listPosts = async (): Promise<Pick<Post, "year" | "slug">[]> => {
+  const list: Pick<Post, "year" | "slug">[] = [];
   const root = join("content", "posts");
 
   for (const year of await readdirAsync(root)) {
@@ -85,7 +86,7 @@ export const listPosts = async (): Promise<Pick<Post, "year" & "slug">[]> => {
         list.push({
           // Remove .mdx suffix
           slug: file.substring(0, file.length - 4),
-          year,
+          year: Number(year),
         });
       }
     }
