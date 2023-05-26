@@ -15,10 +15,10 @@ const Contact = () => {
           <span className="text-xl leading-relaxed text-gray-400 md:leading-relaxed">
             Got an idea? Let&apos;s get work done.
           </span>
-          <ul className="flex flex-row gap-8">
+          <ul className="flex flex-col md:flex-row md:gap-8 gap-2 mt-8">
             <li>
               <a
-                className="my-8 block font-bold text-white transition-colors hover:text-indigo-400"
+                className="block font-bold text-white transition-colors hover:text-indigo-400"
                 href="mailto:contact@cubxity.dev"
                 rel="noreferrer"
                 target="_blank"
@@ -29,7 +29,7 @@ const Contact = () => {
             </li>
             <li>
               <a
-                className="my-8 block font-bold text-white transition-colors hover:text-indigo-400"
+                className="block font-bold text-white transition-colors hover:text-indigo-400"
                 href="https://twitter.com/cubxity"
                 rel="noreferrer"
                 target="_blank"
