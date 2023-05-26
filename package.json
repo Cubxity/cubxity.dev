@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@fontsource/poppins": "^5.0.1",
+    "@heroicons/react": "^2.0.18",
     "@mdx-js/mdx": "^2.3.0",
+    "@notionhq/client": "^2.2.5",
     "@svgr/webpack": "^8.0.1",
     "clsx": "^1.2.1",
     "gray-matter": "^4.0.3",

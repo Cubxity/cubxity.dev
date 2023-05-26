@@ -7,16 +7,22 @@ import HeroBgImage from "../../assets/image/hero-bg.png";
 import ScrollArrow from "./components/layout/ScrollArrow";
 import Socials from "./components/layout/Socials";
 
-const Page = () => {
+import ProjectCard from "@/app/components/cms/project/ProjectCard";
+import Link from "@/app/components/input/Link";
+import { fetchProjects } from "@/lib/notion";
+
+const Page = async () => {
+  const projects = await fetchProjects();
+
   return (
     <>
-      <div className="relative flex h-screen max-h-[80rem] min-h-[40rem] flex-col">
-        <header className="container m-auto px-4">
+      <div className="relative flex h-screen max-h-[80rem] min-h-[40rem] flex-col items-center justify-center">
+        <header className="w-full max-w-screen-xl px-4">
           <div className="max-w-screen-md">
             <p className="text-xl font-medium text-gray-300 mb-2">
               👋 Hey, I&apos;m Cubxity
             </p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-relaxed sm:leading-relaxed md:leading-relaxed">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-relaxed sm:leading-relaxed md:leading-relaxed mb-4">
               Full-stack developer with{" "}
               <span className="relative inline-block">
                 6+ years
@@ -29,14 +35,32 @@ const Page = () => {
           <Image
             src={HeroBgImage}
             alt=""
-            className="absolute -z-50 object-cover"
+            className="absolute -z-50 object-cover select-none"
             fill
           />
           {/*<HeroBgImage className="invisible absolute right-0 top-0 bottom-0 h-full lg:visible" />*/}
         </header>
+        <div className="bg-gradient-to-b from-background/0 to-background absolute left-0 right-0 bottom-0 h-16" />
         <ScrollArrow />
       </div>
-      <main className="scroll-my-20"></main>
+      <main className="scroll-my-20">
+        <section id="projects" className="max-w-screen-xl mx-auto px-4 py-8">
+          <h2 className="text-xl font-bold mb-2">Projects</h2>
+          <p className="text-gray-200 mb-6">Some of my recent projects.</p>
+          <div className="gap-4 grid grid-cols-1 md:grid-cols-3 mb-4">
+            {projects.map((project, i) => (
+              <ProjectCard project={project} key={i} />
+            ))}
+          </div>
+          <Link
+            href="https://github.com/Cubxity"
+            target="_blank"
+            className="text-gray-400"
+          >
+            More...
+          </Link>
+        </section>
+      </main>
     </>
   );
 };

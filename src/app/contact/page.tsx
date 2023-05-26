@@ -6,8 +6,8 @@ import AtIcon from "../../../assets/svg/logo/heros-at.svg";
 
 const Contact = () => {
   return (
-    <div className="relative flex h-screen min-h-[40rem] flex-col">
-      <header className="container m-auto px-4">
+    <div className="relative flex h-screen min-h-[40rem] flex-col items-center justify-center">
+      <header className="max-w-screen-xl w-full px-4">
         <div className="lg:w-1/2">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
             Contact

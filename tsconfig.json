@@ -18,6 +18,21 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/assets/*": [
+        "assets/*"
+      ],
+      "@/app/*": [
+        "src/app/*"
+      ],
+      "@/lib/*": [
+        "src/lib/*"
+      ],
+      "@/styles/*": [
+        "src/styles/*"
+      ]
+    },
     "plugins": [
       {
         "name": "next"

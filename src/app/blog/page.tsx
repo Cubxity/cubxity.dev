@@ -2,16 +2,16 @@ import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 
-const NotFound = () => {
+const BlogHome = () => {
   return (
     <div className="relative flex h-screen min-h-[40rem] flex-col items-center justify-center">
       <header className="max-w-screen-xl w-full px-4">
         <div className="lg:w-1/2">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
-            404
+            🚧 Under Construction
           </h1>
           <span className="text-xl leading-relaxed text-gray-400 md:leading-relaxed">
-            Beep boop? The content you were looking for is not found.
+            This page is under construction, come back again later!
           </span>
           <Link
             href="/"
@@ -25,10 +25,19 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default BlogHome;
 
 export const metadata: Metadata = {
-  title: "Not Found",
+  title: "Blog",
   description:
-    "The requested page does not exist. Perhaps check out the other pages?",
+    "Welcome to my personal blog, where I delve into the realms of software development, engineering, system administration and the captivating world of DevOps.",
+  keywords: [
+    "cubxity",
+    "full-stack",
+    "developer",
+    "minecraft",
+    "sysadmin",
+    "devops",
+    "blog",
+  ],
 };

@@ -18,7 +18,7 @@ export default function Link(props: LinkProps) {
       rel="noreferrer"
       target={target}
       className={clsx(
-        "text-sm font-medium text-white transition-colors hover:text-indigo-400",
+        "text-sm font-medium transition-colors hover:text-indigo-400",
         className
       )}
     >
