@@ -25,8 +25,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <Image
             src={project.thumbnail}
             alt=""
-            layout="fill"
             className="object-cover"
+            fill
           />
         )}
       </div>

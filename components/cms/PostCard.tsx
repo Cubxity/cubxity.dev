@@ -28,8 +28,8 @@ export default function PostCard({ post }: PostCardProps) {
             <Image
               src={post.thumbnail}
               alt=""
-              layout="fill"
               className="object-cover"
+              fill
             />
           )}
         </div>

@@ -23,9 +23,9 @@ export default function PostLayout({ post, children }: PostLayoutProps) {
           {post.thumbnail && (
             <Image
               src={post.thumbnail}
-              objectFit="contain"
-              layout="fill"
+              fill
               alt=""
+              className="object-cover"
               priority
             />
           )}
