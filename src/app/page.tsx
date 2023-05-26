@@ -12,11 +12,11 @@ const Page = () => {
     <>
       <div className="relative flex h-screen max-h-[80rem] min-h-[40rem] flex-col">
         <header className="container m-auto px-4">
-          <div className="lg:w-1/2">
+          <div className="max-w-screen-md">
             <p className="text-xl font-medium text-gray-300 mb-2">
               👋 Hey, I&apos;m Cubxity
             </p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-relaxed md:leading-relaxed">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-relaxed sm:leading-relaxed md:leading-relaxed">
               Full-stack developer with{" "}
               <span className="relative inline-block">
                 6+ years

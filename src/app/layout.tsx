@@ -24,4 +24,5 @@ export const metadata: Metadata = {
     default: "Cubxity",
     template: "%s | Cubxity - Full-stack Developer",
   },
+  icons: "/assets/logo/128x-circle.png",
 };
