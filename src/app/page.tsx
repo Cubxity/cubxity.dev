@@ -26,7 +26,7 @@ const Page = async () => {
               Full-stack developer with{" "}
               <span className="relative inline-block">
                 6+ years
-                <div className="-z-10 absolute left-0 right-0 bottom-2 h-2 bg-rose-600 rounded-full" />
+                <div className="-z-10 absolute left-0 right-0 bottom-2 h-1 md:h-2 bg-rose-600 rounded-full" />
               </span>{" "}
               of experience.
             </h1>
