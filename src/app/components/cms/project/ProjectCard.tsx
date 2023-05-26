@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 import { Project } from "@/lib/cms";
-import Link from "next/link";
 
 export interface ProjectCardProps {
   project: Project;
