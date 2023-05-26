@@ -1,7 +1,7 @@
 import { CMS, CmsConfig } from "netlify-cms-core";
 
-import PostPreview from "../../../components/cms/preview/PostPreview";
-import ProjectPreview from "../../../components/cms/preview/ProjectPreview";
+import PostPreview from "../../app/components/cms/preview/PostPreview";
+import ProjectPreview from "../../app/components/cms/preview/ProjectPreview";
 
 import { projects, posts } from "./collections";
 

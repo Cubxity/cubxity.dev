@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen:admin": "yarn tailwindcss build -m -i styles/globals.css -o public/admin/main.css"
+    "gen:admin": "yarn tailwindcss build -m -i src/styles/globals.css -o public/admin/main.css"
   },
   "dependencies": {
     "@fontsource/poppins": "^5.0.1",
