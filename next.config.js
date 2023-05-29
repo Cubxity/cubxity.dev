@@ -14,5 +14,11 @@ module.exports = {
   },
   images: {
     domains: ["github.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*.amazonaws.com",
+      },
+    ],
   },
 };

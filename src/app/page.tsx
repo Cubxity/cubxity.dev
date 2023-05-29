@@ -7,12 +7,14 @@ import HeroBgImage from "../../assets/image/hero-bg.png";
 import ScrollArrow from "./components/layout/ScrollArrow";
 import Socials from "./components/layout/Socials";
 
+import ClientCard from "@/app/components/cms/project/ClientCard";
 import ProjectCard from "@/app/components/cms/project/ProjectCard";
 import Link from "@/app/components/input/Link";
-import { fetchProjects } from "@/lib/notion";
+import { fetchClients, fetchProjects } from "@/lib/notion";
 
 const Page = async () => {
   const projects = await fetchProjects();
+  const clients = await fetchClients();
 
   return (
     <>
@@ -47,7 +49,7 @@ const Page = async () => {
         <section id="projects" className="max-w-screen-xl mx-auto px-4 py-8">
           <h2 className="text-xl font-bold mb-2">Projects</h2>
           <p className="text-gray-200 mb-6">Some of my recent projects.</p>
-          <div className="gap-4 grid grid-cols-1 md:grid-cols-3 mb-4">
+          <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-4">
             {projects.map((project, i) => (
               <ProjectCard project={project} key={i} />
             ))}
@@ -59,6 +61,17 @@ const Page = async () => {
           >
             More...
           </Link>
+        </section>
+        <section id="projects" className="max-w-screen-xl mx-auto px-4 py-8">
+          <h2 className="text-xl font-bold mb-2">Clients</h2>
+          <p className="text-gray-200 mb-6">
+            Some of the recent clients I&apos;ve worked with.
+          </p>
+          <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-4">
+            {clients.map((client, i) => (
+              <ClientCard client={client} key={i} />
+            ))}
+          </div>
         </section>
       </main>
     </>
