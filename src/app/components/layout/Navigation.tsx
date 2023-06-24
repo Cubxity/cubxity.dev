@@ -16,14 +16,14 @@ export default function Navigation() {
       <div className="max-w-screen-xl mx-auto flex flex-row items-center gap-6 px-4 py-6">
         <NextLink
           href="/"
-          className="mr-2 block overflow-clip rounded-full leading-[0] flex-none"
+          className="mr-2 block overflow-clip rounded-full leading-[0] flex-none relative w-8 h-8"
         >
           <Image
             src={Avatar}
-            width={32}
-            height={32}
             className="align-middle"
             alt="Cubxity"
+            sizes="2rem"
+            fill
             priority
           />
         </NextLink>

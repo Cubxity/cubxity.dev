@@ -39,6 +39,7 @@ const Page = async () => {
             alt=""
             className="absolute -z-50 object-cover select-none"
             fill
+            priority
           />
           {/*<HeroBgImage className="invisible absolute right-0 top-0 bottom-0 h-full lg:visible" />*/}
         </header>

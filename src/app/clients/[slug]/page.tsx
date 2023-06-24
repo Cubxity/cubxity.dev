@@ -34,7 +34,9 @@ const ClientPage = async ({ params }: ClientPageProps) => {
             {data.client.icon ? (
               <Image
                 src={data.client.icon.url}
+                sizes="2.5rem"
                 alt={`${data.client.name}'s icon`}
+                priority
                 fill
               />
             ) : (
