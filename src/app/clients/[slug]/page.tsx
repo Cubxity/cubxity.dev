@@ -51,11 +51,13 @@ const ClientPage = async ({ params }: ClientPageProps) => {
           {data.client.meta.description}
         </p>
       </header>
-      <div className="prose prose-invert prose-headings:mb-4 prose-headings:mt-10 prose-headings:scroll-my-20 lg:prose-lg lg:prose-headings:mt-12 max-w-screen-xl mx-auto px-4">
-        {data.client.content && (
-          <HygraphNodes nodes={data.client.content.json.children} />
-        )}
-      </div>
+      <main>
+        <div className="prose prose-invert prose-headings:mb-4 prose-headings:mt-10 prose-headings:scroll-my-20 lg:prose-lg lg:prose-headings:mt-12 max-w-screen-xl mx-auto px-4">
+          {data.client.content && (
+            <HygraphNodes nodes={data.client.content.json.children} />
+          )}
+        </div>
+      </main>
     </>
   );
 };
