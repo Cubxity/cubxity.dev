@@ -14,7 +14,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
 
   return (
     <>
-      <header className="mx-auto w-full max-w-screen-lg px-4 pt-24 md:pt-36 pb-4 md:w-5/6 md:pb-16 lg:w-2/3">
+      <header className="mx-auto w-full max-w-screen-lg px-4 pt-24 mb-4 md:pt-36 md:pb-8 md:w-5/6 lg:w-2/3">
         <Link
           href="/blog"
           className="text-gray-400 flex flex-row items-center gap-2 transition-colors hover:text-indigo-400 mb-10"
