@@ -31,7 +31,7 @@ const BlogHome = async () => {
         {featuredPost && (
           <Link href={`/blog/${featuredPost.slug}`}>
             <article className="flex flex-col md:flex-row gap-8 md:gap-12">
-              <div className="aspect-video relative flex-1">
+              <div className="aspect-video relative w-full md:w-auto md:flex-1">
                 <Image
                   className="rounded-lg object-cover"
                   src={featuredPost.coverImage.url}
@@ -40,8 +40,8 @@ const BlogHome = async () => {
                   priority
                 />
               </div>
-              <div className="flex-1">
-                <h2 className="text-2xl md:text-4xl font-bold mb-2 md:mb-4 hover:underline">
+              <div className="md:flex-1">
+                <h2 className="text-2xl md:text-4xl font-bold mb-4 hover:underline">
                   {featuredPost.title}
                 </h2>
                 <p className="md:text-xl text-gray-300">
