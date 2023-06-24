@@ -2,6 +2,7 @@ import { FC, ReactNode } from "react";
 
 import HygraphNodes from "@/app/components/cms/hygraph/HygraphNodes";
 import HygraphText from "@/app/components/cms/hygraph/HygraphText";
+import HygraphCodeBlock from "@/app/components/cms/hygraph/elements/HygraphCodeBlock";
 import HygraphImageNode from "@/app/components/cms/hygraph/elements/HygraphImageNode";
 import HygraphLinkNode from "@/app/components/cms/hygraph/elements/HygraphLinkNode";
 import type { RichTextNode, Text } from "@/lib/cms";
@@ -22,6 +23,11 @@ const elements: Partial<Record<RichTextNode["type"], FC<ElementProps<any>>>> = {
   "heading-four": ({ children }) => <h4>{children}</h4>,
   "heading-five": ({ children }) => <h5>{children}</h5>,
   "heading-six": ({ children }) => <h6>{children}</h6>,
+  "numbered-list": ({ children }) => <ol>{children}</ol>,
+  "bulleted-list": ({ children }) => <ul>{children}</ul>,
+  "list-item": ({ children }) => <li>{children}</li>,
+  "list-item-child": ({ children }) => <>{children}</>,
+  "code-block": HygraphCodeBlock,
   paragraph: ({ children }) => <p>{children}</p>,
   link: HygraphLinkNode,
   image: HygraphImageNode,

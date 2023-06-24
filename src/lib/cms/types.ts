@@ -33,3 +33,18 @@ export interface Client extends ClientPreview {
     json: RichText;
   } | null;
 }
+
+export interface PostPreview {
+  id: string;
+  updatedAt: string;
+  slug: string;
+  title: string;
+  meta: Meta;
+  coverImage?: Asset;
+}
+
+export interface Post extends PostPreview {
+  content: {
+    json: RichText;
+  } | null;
+}

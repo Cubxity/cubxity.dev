@@ -1,4 +1,10 @@
-import type { Client, ClientPreview, Project } from "@/lib/cms";
+import type {
+  Client,
+  ClientPreview,
+  Post,
+  PostPreview,
+  Project,
+} from "@/lib/cms";
 
 export interface GetProjectsResponse {
   projects: Project[];
@@ -10,4 +16,12 @@ export interface GetClientsResponse {
 
 export interface GetClientResponse {
   client: Client;
+}
+
+export interface GetPostsResponse {
+  posts: PostPreview[];
+}
+
+export interface GetPostResponse {
+  post: Post;
 }

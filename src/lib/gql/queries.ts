@@ -4,6 +4,8 @@ import {
   client,
   GetClientResponse,
   GetClientsResponse,
+  GetPostResponse,
+  GetPostsResponse,
   GetProjectsResponse,
 } from "@/lib/gql/index";
 
@@ -24,6 +26,19 @@ export const getClientBySlug = (
 ): Promise<ApolloQueryResult<GetClientResponse>> =>
   client.query({
     query: GET_CLIENT_BY_SLUG,
+    variables: { slug },
+  });
+
+export const getPosts = (): Promise<ApolloQueryResult<GetPostsResponse>> =>
+  client.query({
+    query: GET_POSTS,
+  });
+
+export const getPostBySlug = (
+  slug: string
+): Promise<ApolloQueryResult<GetPostResponse>> =>
+  client.query({
+    query: GET_POST_BY_SLUG,
     variables: { slug },
   });
 
@@ -82,6 +97,7 @@ const GET_CLIENT_BY_SLUG = gql`
     }
   }
 `;
+
 const GET_POSTS = gql`
   {
     posts {
@@ -92,6 +108,27 @@ const GET_POSTS = gql`
       meta {
         description
         tags
+      }
+      coverImage {
+        url
+      }
+    }
+  }
+`;
+
+const GET_POST_BY_SLUG = gql`
+  query ($slug: String) {
+    post(where: { slug: $slug }) {
+      id
+      updatedAt
+      slug
+      title
+      meta {
+        description
+        tags
+      }
+      coverImage {
+        url
       }
       content {
         json
