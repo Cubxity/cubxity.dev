@@ -1,8 +1,12 @@
 import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
+
+import Avatar from "../../../../public/assets/logo/256x.png";
 
 import HygraphNodes from "@/app/components/cms/hygraph/HygraphNodes";
+import ContactButton from "@/app/components/input/ContactButton";
 import { getPostBySlug, getPosts } from "@/lib/gql";
 
 export interface BlogPageProps {
@@ -43,6 +47,22 @@ const BlogPage = async ({ params }: BlogPageProps) => {
         <article className="prose prose-invert prose-headings:mb-4 prose-headings:mt-10 prose-headings:scroll-my-20 lg:prose-lg lg:prose-headings:mt-12 mx-auto">
           <HygraphNodes nodes={data.post.content.json.children} />
         </article>
+        <div className="flex flex-col sm:flex-row items-center gap-6 bg-gray-800 rounded-lg p-6 max-w-screen-md mx-auto mt-16">
+          <div className="w-16 h-16 relative">
+            <Image
+              src={Avatar}
+              className="align-middle bg-gray-600 rounded-full"
+              alt="Cubxity"
+              sizes="4rem"
+              fill
+            />
+          </div>
+          <div className="sm:flex-1">
+            <h2 className="text-xl font-bold mb-2">Written by Cubxity</h2>
+            <p>Full-stack developer</p>
+          </div>
+          <ContactButton />
+        </div>
       </main>
     </>
   );

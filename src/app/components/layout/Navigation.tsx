@@ -1,4 +1,3 @@
-import { EnvelopeIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import NextLink from "next/link";
 import React from "react";
@@ -7,6 +6,8 @@ import Avatar from "../../../../public/assets/logo/256x.png";
 import Link from "../input/Link";
 
 import NavigationWrapper from "./NavigationWrapper";
+
+import ContactButton from "@/app/components/input/ContactButton";
 
 export default function Navigation() {
   return (
@@ -33,14 +34,7 @@ export default function Navigation() {
           Docs
         </Link>
         <div className="grow" />
-        <NextLink
-          href="/contact"
-          role="button"
-          className="flex flex-row items-center gap-2 rounded-md border border-gray-700 hover:border-indigo-600 px-4 py-2 text-sm font-medium transition-all"
-        >
-          <EnvelopeIcon className="w-5 h-5" />
-          Contact
-        </NextLink>
+        <ContactButton />
       </div>
     </NavigationWrapper>
   );
