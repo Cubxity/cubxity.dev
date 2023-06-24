@@ -57,7 +57,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
               fill
             />
           </div>
-          <div className="sm:flex-1">
+          <div className="sm:flex-1 text-center sm:text-left">
             <h2 className="text-xl font-bold mb-2">Written by Cubxity</h2>
             <p>Full-stack developer</p>
           </div>
