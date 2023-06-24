@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 
-import { Project } from "@/lib/cms";
+import type { Project } from "@/lib/cms";
 
 export interface ProjectCardProps {
   project: Project;
@@ -18,7 +18,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => (
     <h3 className="font-semibold mb-2">
       {project.title} <ArrowUpRightIcon className="inline-block w-4 h-4" />
     </h3>
-    <p className="text-gray-200">{project.description}</p>
+    <p className="text-gray-200">{project.meta.description}</p>
   </Link>
 );
 

@@ -2,10 +2,11 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Client, formatClientRange } from "@/lib/cms";
+import type { ClientPreview } from "@/lib/cms";
+import { formatClientRange } from "@/lib/cms";
 
 export interface ClientCardProps {
-  client: Client;
+  client: ClientPreview;
 }
 
 const ClientCard = ({ client }: ClientCardProps) => (
@@ -24,7 +25,12 @@ const ClientCard = ({ client }: ClientCardProps) => (
         )}
       >
         {client.icon ? (
-          <Image src={client.icon} alt={`${client.name}'s icon`} fill />
+          <Image
+            src={client.icon.url}
+            sizes="2rem"
+            alt={`${client.name}'s icon`}
+            fill
+          />
         ) : (
           client.name[0]
         )}
@@ -32,7 +38,7 @@ const ClientCard = ({ client }: ClientCardProps) => (
       <h3 className="font-semibold flex-1">{client.name}</h3>
       <span className="text-sm text-gray-300">{formatClientRange(client)}</span>
     </div>
-    <p className="text-gray-200">{client.description}</p>
+    <p className="text-gray-200">{client.meta.description}</p>
   </Link>
 );
 

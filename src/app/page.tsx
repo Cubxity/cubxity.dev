@@ -10,11 +10,11 @@ import Socials from "./components/layout/Socials";
 import ClientCard from "@/app/components/cms/project/ClientCard";
 import ProjectCard from "@/app/components/cms/project/ProjectCard";
 import Link from "@/app/components/input/Link";
-import { fetchClients, fetchProjects } from "@/lib/notion";
+import { getClients, getProjects } from "@/lib/gql";
 
 const Page = async () => {
-  const projects = await fetchProjects();
-  const clients = await fetchClients();
+  const projects = await getProjects();
+  const clients = await getClients();
 
   return (
     <>
@@ -50,8 +50,8 @@ const Page = async () => {
           <h2 className="text-xl font-bold mb-2">Projects</h2>
           <p className="text-gray-200 mb-6">Some of my recent projects.</p>
           <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-4">
-            {projects.map((project, i) => (
-              <ProjectCard project={project} key={i} />
+            {projects.data.projects.map((project) => (
+              <ProjectCard project={project} key={project.id} />
             ))}
           </div>
           <Link
@@ -68,8 +68,8 @@ const Page = async () => {
             Some of the recent clients I&apos;ve worked with.
           </p>
           <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-4">
-            {clients.map((client, i) => (
-              <ClientCard client={client} key={i} />
+            {clients.data.clients.map((client) => (
+              <ClientCard client={client} key={client.id} />
             ))}
           </div>
         </section>

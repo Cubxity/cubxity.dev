@@ -1,16 +1,35 @@
-export interface Project {
-  title: string;
+import { RichText } from "@/lib/cms/hygraph";
+
+export interface Meta {
   description: string;
   tags: string[];
+}
+
+export interface Asset {
+  url: string;
+}
+
+export interface Project {
+  id: string;
+  slug: string;
+  title: string;
+  meta: Meta;
   url?: string;
 }
 
-export interface Client {
-  name: string;
+export interface ClientPreview {
+  id: string;
   slug: string;
-  description: string;
-  icon?: string;
+  name: string;
+  meta: Meta;
+  icon?: Asset;
   cover?: string;
-  start?: number;
-  end?: number;
+  startYear?: number;
+  endYear?: number;
+}
+
+export interface Client extends ClientPreview {
+  content: {
+    json: RichText;
+  } | null;
 }

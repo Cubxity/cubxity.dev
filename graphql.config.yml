@@ -1,0 +1,5 @@
+schema: local.graphql
+extensions:
+  endpoints:
+    hygraph:
+      url: https://eu-central-1-shared-euc1-02.cdn.hygraph.com/content/clapdxe1k589301ta8n3vdamc/master

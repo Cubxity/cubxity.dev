@@ -13,12 +13,6 @@ module.exports = {
     return config;
   },
   images: {
-    domains: ["github.com"],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "*.amazonaws.com",
-      },
-    ],
+    domains: ["github.com", "media.graphassets.com"],
   },
 };
