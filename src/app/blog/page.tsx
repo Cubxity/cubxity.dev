@@ -41,6 +41,9 @@ const BlogHome = async () => {
                 />
               </div>
               <div className="md:flex-1">
+                <div className="md:text-xl text-gray-500 mb-4">
+                  {new Date(featuredPost.updatedAt).toDateString()}
+                </div>
                 <h2 className="text-2xl md:text-4xl font-bold mb-4 hover:underline">
                   {featuredPost.title}
                 </h2>
