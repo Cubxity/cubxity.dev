@@ -7,7 +7,7 @@ import type { ImageNode } from "@/lib/cms";
 const HygraphImageNode: FC<ElementProps<ImageNode>> = ({ node }) => (
   <div className="not-prose mt-6">
     <div
-      className="relative aspect-video mb:rounded-xl overflow-clip"
+      className="relative aspect-video md:rounded-md overflow-clip"
       style={{
         aspectRatio: node.width / node.height,
       }}
