@@ -51,7 +51,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
         </div>
       </header>
       <main className="m-auto px-4 pb-24">
-        <article className="prose prose-invert prose-headings:mb-4 prose-headings:mt-10 prose-headings:scroll-my-20 lg:prose-lg lg:prose-headings:mt-12 mx-auto">
+        <article className="prose prose-invert prose-code:before:content-none prose-code:after:content-none prose-headings:mb-4 prose-headings:mt-10 prose-headings:scroll-my-20 lg:prose-lg lg:prose-headings:mt-12 mx-auto">
           <HygraphNodes nodes={data.post.content.json.children} />
           <time className="text-gray-400 italic" dateTime={data.post.updatedAt}>
             Updated {new Date(data.post.updatedAt).toDateString()}
