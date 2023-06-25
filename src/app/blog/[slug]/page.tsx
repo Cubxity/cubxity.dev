@@ -1,4 +1,5 @@
 import { ArrowLeftIcon } from "@heroicons/react/20/solid";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -8,6 +9,7 @@ import Avatar from "../../../../public/assets/logo/256x.png";
 import HygraphNodes from "@/app/components/cms/hygraph/HygraphNodes";
 import ContactButton from "@/app/components/input/ContactButton";
 import { getPostBySlug, getPosts } from "@/lib/gql";
+import { generateNextImageUrl } from "@/lib/util";
 
 export interface BlogPageProps {
   params: { slug: string };
@@ -18,7 +20,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
 
   return (
     <>
-      <header className="mx-auto w-full max-w-screen-lg px-4 pt-24 mb-4 md:pt-36 md:pb-8 md:w-5/6 lg:w-2/3">
+      <header className="mx-auto max-w-screen-lg px-4 pt-24 mb-4 md:pt-36 md:pb-8">
         <Link
           href="/blog"
           className="text-gray-400 flex flex-row items-center gap-2 transition-colors hover:text-indigo-400 mb-10"
@@ -37,7 +39,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
             {data.post.meta.description}
           </p>
           {data.post.coverImage && (
-            <div className="relative mt-16 aspect-video w-full overflow-hidden md:rounded-2xl">
+            <div className="relative mt-10 md:mt-16 aspect-video w-full overflow-hidden md:rounded-2xl">
               <Image src={data.post.coverImage.url} fill alt="" priority />
             </div>
           )}
@@ -73,4 +75,34 @@ export default BlogPage;
 export const generateStaticParams = async () => {
   const { data } = await getPosts();
   return data.posts.map(({ slug }) => ({ slug }));
+};
+
+export const generateMetadata = async ({
+  params,
+}: BlogPageProps): Promise<Metadata> => {
+  const { data } = await getPostBySlug(params.slug);
+
+  return {
+    title: data.post.title,
+    description: data.post.meta.description,
+    keywords: ["cubxity", ...data.post.meta.tags],
+    openGraph: {
+      type: "article",
+      title: data.post.title,
+      description: data.post.meta.description,
+      authors: ["Cubxity"],
+      images: [
+        {
+          url: generateNextImageUrl(data.post.coverImage.url),
+          type: "image/webp",
+          width: 1200,
+          height: 600,
+        },
+      ],
+      siteName: "Cubxity's Blog",
+    },
+    twitter: {
+      card: "summary_large_image",
+    },
+  };
 };

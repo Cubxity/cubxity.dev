@@ -80,7 +80,7 @@ const Page = async () => {
 };
 
 export const metadata: Metadata = {
-  title: "Home | Cubxity - Full-stack Developer",
+  title: "Home | Cubxity — Full-stack Developer",
   description:
     "Hey, I'm Cubxity. I'm a Full-stack Developer and System Administrator with 6+ years of experience.",
   keywords: [
@@ -92,6 +92,13 @@ export const metadata: Metadata = {
     "portfolio",
     "resume",
   ],
+  openGraph: {
+    siteName: "Cubxity — Full-stack Developer",
+    images: ["/assets/logo/256x.png"],
+    title: "Home",
+    description:
+      "Hey, I'm Cubxity. I'm a Full-stack Developer and System Administrator with 6+ years of experience.",
+  },
 };
 
 export default Page;

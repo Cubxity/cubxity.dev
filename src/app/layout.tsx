@@ -20,9 +20,14 @@ export default function Layout({ children }) {
 }
 
 export const metadata: Metadata = {
+  applicationName: "Test",
   title: {
     default: "Cubxity",
-    template: "%s | Cubxity - Full-stack Developer",
+    template: "%s | Cubxity — Full-stack Developer",
+  },
+  openGraph: {
+    siteName: "Cubxity — Full-stack Developer",
+    images: ["/assets/logo/256x.png"],
   },
   icons: "/assets/logo/128x-circle.png",
 };

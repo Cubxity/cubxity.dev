@@ -59,4 +59,11 @@ export const metadata: Metadata = {
     "sysadmin",
     "contact",
   ],
+  openGraph: {
+    siteName: "Cubxity — Full-stack Developer",
+    images: ["/assets/logo/256x.png"],
+    title: "Contact",
+    description:
+      "Got an idea? Let's work together! Find ways to contact me on this page.",
+  },
 };

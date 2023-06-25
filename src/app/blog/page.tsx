@@ -74,4 +74,11 @@ export const metadata: Metadata = {
     "devops",
     "blog",
   ],
+  openGraph: {
+    siteName: "Cubxity — Full-stack Developer",
+    images: ["/assets/logo/256x.png"],
+    title: "Blog",
+    description:
+      "Welcome to my personal blog, where I delve into the realms of software development, engineering, system administration and the captivating world of DevOps.",
+  },
 };

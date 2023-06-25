@@ -1,8 +1,10 @@
 import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { BlogPageProps } from "@/app/blog/[slug]/page";
 import HygraphNodes from "@/app/components/cms/hygraph/HygraphNodes";
 import { getClientBySlug, getClients } from "@/lib/gql";
 
@@ -67,4 +69,22 @@ export default ClientPage;
 export const generateStaticParams = async () => {
   const clients = await getClients();
   return clients.data.clients.map(({ slug }) => ({ slug }));
+};
+
+export const generateMetadata = async ({
+  params,
+}: BlogPageProps): Promise<Metadata> => {
+  const { data } = await getClientBySlug(params.slug);
+
+  return {
+    title: data.client.name,
+    description: data.client.meta.description,
+    keywords: ["cubxity", "client", ...data.client.meta.tags],
+    openGraph: {
+      siteName: "Cubxity — Full-stack Developer",
+      images: ["/assets/logo/256x.png"],
+      title: data.client.name,
+      description: data.client.meta.description,
+    },
+  };
 };
