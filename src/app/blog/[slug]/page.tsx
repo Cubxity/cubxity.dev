@@ -30,7 +30,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
           <span className="text-md font-medium text-neutral-400 md:text-lg">
             {new Date(data.post.updatedAt).toDateString()}
           </span>
-          <h1 className="mt-4 mb-4 text-3xl font-bold text-white md:mb-8 md:text-6xl">
+          <h1 className="mt-4 mb-4 text-3xl font-bold text-white md:mb-8 md:text-6xl md:leading-tight">
             {data.post.title}
           </h1>
           <p className="md:text-xl text-neutral-200">
