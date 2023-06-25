@@ -29,9 +29,14 @@ const BlogPage = async ({ params }: BlogPageProps) => {
           Blog
         </Link>
         <div className="flex flex-col items-center text-center">
-          <span className="text-md font-medium text-neutral-400 md:text-lg">
-            {new Date(data.post.updatedAt).toDateString()}
-          </span>
+          <time
+            className="text-md font-medium text-neutral-400 md:text-lg"
+            dateTime={data.post.publishedAt ?? data.post.updatedAt}
+          >
+            {new Date(
+              data.post.publishedAt ?? data.post.updatedAt
+            ).toDateString()}
+          </time>
           <h1 className="mt-4 mb-4 text-3xl font-bold text-white md:mb-8 md:text-6xl md:leading-tight">
             {data.post.title}
           </h1>
@@ -48,6 +53,9 @@ const BlogPage = async ({ params }: BlogPageProps) => {
       <main className="m-auto px-4 pb-24">
         <article className="prose prose-invert prose-headings:mb-4 prose-headings:mt-10 prose-headings:scroll-my-20 lg:prose-lg lg:prose-headings:mt-12 mx-auto">
           <HygraphNodes nodes={data.post.content.json.children} />
+          <time className="text-gray-400 italic" dateTime={data.post.updatedAt}>
+            Updated {new Date(data.post.updatedAt).toDateString()}
+          </time>
         </article>
         <div className="flex flex-col sm:flex-row items-center gap-6 bg-gray-800 rounded-lg p-6 max-w-screen-md mx-auto mt-16">
           <div className="w-16 h-16 relative">

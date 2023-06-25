@@ -102,6 +102,7 @@ const GET_POSTS = gql`
   {
     posts {
       id
+      publishedAt
       updatedAt
       slug
       title
@@ -120,6 +121,7 @@ const GET_POST_BY_SLUG = gql`
   query ($slug: String) {
     post(where: { slug: $slug }) {
       id
+      publishedAt
       updatedAt
       slug
       title

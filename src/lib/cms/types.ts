@@ -36,6 +36,7 @@ export interface Client extends ClientPreview {
 
 export interface PostPreview {
   id: string;
+  publishedAt: string;
   updatedAt: string;
   slug: string;
   title: string;
