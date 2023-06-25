@@ -9,7 +9,7 @@ const HygraphLinkNode: FC<ElementProps<LinkNode>> = ({ node, children }) => (
     href={node.href}
     target={node.openInNewTab && "_blank"}
     rel="noreferrer"
-    className="break-all"
+    className="break-words"
   >
     {children}
   </Link>
