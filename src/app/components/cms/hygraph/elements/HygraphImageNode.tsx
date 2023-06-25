@@ -19,7 +19,7 @@ const HygraphImageNode: FC<ElementProps<ImageNode>> = ({ node }) => (
         fill
       />
     </div>
-    <p className="text-gray-500 italic text-sm mt-2">{node.altText}</p>
+    <p className="text-gray-400 italic text-sm mt-2">{node.altText}</p>
   </div>
 );
 
