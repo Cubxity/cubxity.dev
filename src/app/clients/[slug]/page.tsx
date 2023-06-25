@@ -71,6 +71,9 @@ export const generateStaticParams = async () => {
   return clients.data.clients.map(({ slug }) => ({ slug }));
 };
 
+export const dynamic = "force-static";
+export const dynamicParams = false;
+
 export const generateMetadata = async ({
   params,
 }: BlogPageProps): Promise<Metadata> => {
