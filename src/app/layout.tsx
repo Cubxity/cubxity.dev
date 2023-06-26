@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import React from "react";
 
 import Navigation from "@/app/components/layout/Navigation";
+import * as process from "process";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,4 +33,6 @@ export const metadata: Metadata = {
     images: ["/assets/logo/256x.png"],
   },
   icons: "/assets/logo/128x-circle.png",
+  metadataBase:
+    process.env.METADATA_BASE_URL && new URL(process.env.METADATA_BASE_URL),
 };
