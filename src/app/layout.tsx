@@ -1,16 +1,18 @@
-import "@fontsource/poppins/400.css";
-import "@fontsource/poppins/500.css";
-import "@fontsource/poppins/700.css";
-
 import "../styles/globals.css";
 import { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import React from "react";
 
-import Navigation from "./components/layout/Navigation";
+import Navigation from "@/app/components/layout/Navigation";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 export default function Layout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={poppins.className}>
       <body>
         <Navigation />
         {children}

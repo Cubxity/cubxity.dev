@@ -1,6 +1,6 @@
 {
   "private": true,
-  "license": " AGPL-3.0-only",
+  "license": "AGPL-3.0-only",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.16",
-    "@fontsource/poppins": "^5.0.3",
     "@heroicons/react": "^2.0.18",
     "@svgr/webpack": "^8.0.1",
     "clsx": "^1.2.1",
