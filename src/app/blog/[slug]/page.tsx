@@ -45,7 +45,13 @@ const BlogPage = async ({ params }: BlogPageProps) => {
           </p>
           {data.post.coverImage && (
             <div className="relative mt-10 md:mt-16 aspect-video w-full overflow-hidden md:rounded-2xl">
-              <Image src={data.post.coverImage.url} fill alt="" priority />
+              <Image
+                src={data.post.coverImage.url}
+                fill
+                alt=""
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                priority
+              />
             </div>
           )}
         </div>
