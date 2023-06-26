@@ -1,10 +1,10 @@
 import "../styles/globals.css";
+
 import { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import React from "react";
 
 import Navigation from "@/app/components/layout/Navigation";
-import * as process from "process";
 
 const poppins = Poppins({
   subsets: ["latin"],
