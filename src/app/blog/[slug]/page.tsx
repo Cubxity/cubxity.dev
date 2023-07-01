@@ -117,6 +117,8 @@ export const generateMetadata = async ({
         },
       ],
       siteName: "Cubxity's Blog",
+      publishedTime: data.post.publishedAt,
+      modifiedTime: data.post.updatedAt,
     },
     twitter: {
       card: "summary_large_image",
