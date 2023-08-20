@@ -1,15 +1,12 @@
 import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
+import PostCard from "@/app/components/cms/blog/PostCard";
 import { getPosts } from "@/lib/gql";
 
 const BlogHome = async () => {
   const { data } = await getPosts();
-
-  // TODO: Improve this
-  const featuredPost = data.posts?.[0];
 
   return (
     <>
@@ -27,33 +24,10 @@ const BlogHome = async () => {
           </h1>
         </div>
       </header>
-      <main className="max-w-screen-xl mx-auto px-4">
-        {featuredPost && (
-          <Link href={`/blog/${featuredPost.slug}`}>
-            <article className="flex flex-col md:flex-row gap-8 md:gap-12">
-              <div className="aspect-video relative w-full md:w-auto md:flex-1">
-                <Image
-                  className="rounded-lg object-cover"
-                  src={featuredPost.coverImage.url}
-                  alt=""
-                  fill
-                  priority
-                />
-              </div>
-              <div className="md:flex-1">
-                <div className="md:text-xl text-gray-500 mb-4">
-                  {new Date(featuredPost.updatedAt).toDateString()}
-                </div>
-                <h2 className="text-2xl md:text-4xl font-bold mb-4 hover:underline">
-                  {featuredPost.title}
-                </h2>
-                <p className="md:text-xl text-gray-300">
-                  {featuredPost.meta.description}
-                </p>
-              </div>
-            </article>
-          </Link>
-        )}
+      <main className="max-w-screen-xl mx-auto px-4 flex flex-col gap-8 pb-16">
+        {data.posts.map((post) => (
+          <PostCard post={post} key={post.id} />
+        ))}
       </main>
     </>
   );

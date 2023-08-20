@@ -100,7 +100,7 @@ const GET_CLIENT_BY_SLUG = gql`
 
 const GET_POSTS = gql`
   {
-    posts {
+    posts(orderBy: createdAt_DESC) {
       id
       publishedAt
       updatedAt

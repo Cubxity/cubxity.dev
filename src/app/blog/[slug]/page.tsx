@@ -108,14 +108,16 @@ export const generateMetadata = async ({
       title: data.post.title,
       description: data.post.meta.description,
       authors: ["Cubxity"],
-      images: [
-        {
-          url: generateNextImageUrl(data.post.coverImage.url),
-          type: "image/webp",
-          width: 1200,
-          height: 600,
-        },
-      ],
+      images: data.post.coverImage
+        ? [
+            {
+              url: generateNextImageUrl(data.post.coverImage.url),
+              type: "image/webp",
+              width: 1200,
+              height: 600,
+            },
+          ]
+        : [],
       siteName: "Cubxity's Blog",
       publishedTime: data.post.publishedAt,
       modifiedTime: data.post.updatedAt,
